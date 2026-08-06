@@ -16,8 +16,10 @@ This session is designed to serve three overlapping partner audiences in the sam
 
 | Segment | Primary motivation |
 | --- | --- |
-| **Alliance & Channel Partners** | Learn to demo, quote, deploy DAP-based solutions for customers, operate DAP at scale across many customer tenants — access control, automation, and Day-2 lifecycle |
+| **Partners** | Learn to demo, quote, and deploy DAP-based solutions for customers |
 | **ISVs** | Package and publish their own software as a blueprint into the DAP Catalog |
+| **GSI's** | Operate DAP at scale across many customer tenants — access control, automation, and Day-2 lifecycle |
+
 
 ## Master Agenda (High Level)
 
