@@ -12,6 +12,7 @@ This document is provided to assist instructors in delivering the "Dell Automati
 | --- | --- | --- |
 | 0.1 | 04-Aug-2026 | Initial draft, built from Dell Demo Center / DAP Orchestrator walkthrough content |
 | 0.2 | 04-Aug-2026 | Retargeted for Partners, ISVs, and GSIs — added Audience Segments and per-module audience-relevance notes |
+| 0.3 | 11-Aug-2026 | Added PowerStore storage onboarding, health check, and OS update guidance to Module 3 |
 
 ### Disclaimer
 
@@ -26,7 +27,7 @@ This is a simulated/demo environment populated with placeholder data intended fo
 | **Audience** | Partners, ISVs (Independent Software Vendors), and GSIs (Global Systems Integrators) new to Dell Automation Platform (DAP) |
 | **Format** | Instructor-led, hands-on (lecture + guided lab per module) |
 | **Duration** | ~4 hours (half-day), including breaks |
-| **Prerequisites** | Web browser, Dell Demo Center / DAP Test Drive access credentials (issued by instructor), basic familiarity with infrastructure/IT ops concepts |
+| **Prerequisites** | Web browser, Dell Demo Center / DAP Take it for a spin access credentials (issued by instructor), basic familiarity with infrastructure/IT ops concepts |
 | **Environment** | Dell Demo Center-hosted DAP tenant (Orchestrator + Portal), pre-seeded with sample inventory (Private Cloud, Edge, Storage, Free Pool nodes) and sample blueprints |
 
 ### 1.1 Audience Segments
@@ -76,7 +77,7 @@ By the end of the session, attendees will be able to:
 | 2:30–3:15 | 45 min | Module 6: Deploy a Blueprint (guided lab) | Lab |
 | 3:15–3:25 | 10 min | Break | — |
 | 3:25–3:50 | 25 min | Module 7: Monitor & Manage Deployments | Demo + Lab |
-| 3:50–4:00 | 10 min | Wrap-up, Day-2 teaser, Q&A, feedback | Lecture |
+| 3:50–4:00 | 10 min | Wrap-up, Q&A, feedback | Lecture |
 
 ---
 
@@ -133,9 +134,29 @@ By the end of the session, attendees will be able to:
 - Expandable rows show child hosts under a cluster (e.g., a Nutanix cluster expands into its member PowerEdge hosts with service tags).
 - Drilling into a node opens its native management console view (Overview / Physical View / Updates / Security / Settings / Support) — show Physical View (front/back chassis view with health), and Updates tab (firmware/update advisor).
 
+#### Storage & PowerStore specifics
+
+PowerStore arrays appear as **Storage** assets in DAP once onboarded. Use these points when attendees ask how storage is brought under DAP management or what lifecycle actions are available.
+
+- **Prerequisites for onboarding:** PowerStore T or Q model running **PowerStoreOS 3.0 or later** (PowerStoreOS 4.0 or later is required for DAP-orchestrated software upgrades); a dedicated local PowerStore account with the **Storage Administrator** role; TLS trust with the PowerStore management certificate; the DAP OXY component able to reach the floating management IP and all cluster nodes.
+- **Onboarding flow:** In the DAP Portal, go to **Home → Go to Assets → Add Assets → Storage**. Enter the floating management IP, the dedicated Storage Administrator credentials, and certificate information, then click **Onboard**.
+- **In the Orchestrator:** Once onboarded, the PowerStore cluster is visible under **Inventory → Infrastructure**. Available actions include editing properties, testing the connection, running a **pre-upgrade health check**, and upgrading **PowerStoreOS** (PowerStoreOS 4.0 or later).
+- **Health checks:**
+  - **System Check** — built into PowerStoreOS; run before maintenance and periodically.
+  - **Pre-Upgrade Health Check (PUHC)** — included with upgrade packages; run before any OS upgrade.
+  - **Health Check thin packages** — off-release packages that add checks for newly discovered issues; upload and install separately.
+- **OS updates through DAP:**
+  1. Download the PowerStoreOS upgrade package from Dell Support.
+  2. In the Orchestrator, select the PowerStore cluster and run a **pre-upgrade health check**.
+  3. Review results and remediate any issues.
+  4. Initiate **Upgrade** and apply the package.
+  5. Monitor the job through **Events**, **Alerts**, and **Jobs**.
+  6. Re-run health checks after the upgrade completes.
+- **Planning note:** Nondisruptive upgrades (NDU) are supported, but plan them during maintenance windows or low activity because half of the system hardware resources may be unavailable during parts of the upgrade. Also verify that any installed Health Check, Language Pack, or Disk Firmware packages are compatible with the new PowerStoreOS release.
+
 **Demo:** Filter to Private Cloud, expand a cluster, open a member host, review Physical View and Updates.
 
-**Lab checkpoint:** Attendees filter by each asset-type chip once and open one node's Physical View.
+**Lab checkpoint:** Attendees filter by each asset-type chip once, open one node's Physical View, and identify PowerStore health status and OS update information in the Infrastructure grid.
 
 ---
 
@@ -230,7 +251,7 @@ By the end of the session, attendees will be able to:
 
 ## 4. Pre-Session Setup Checklist (Instructor)
 
-- [ ] Confirm Demo Center / DAP Test Drive room URL and per-student jumphost/login list.
+- [ ] Confirm Demo Center / DAP Take it for a spin room URL and per-student jumphost/login list.
 - [ ] Verify sample inventory is online (Private Cloud, Edge, Storage, Free Pool nodes all "Online"/"Connected").
 - [ ] Verify at least one deployable Offer Blueprint per attendee/project namespace.
 - [ ] Pre-stage any required input files (e.g., service tags, IPs) attendees will need to paste into the Configuration step.

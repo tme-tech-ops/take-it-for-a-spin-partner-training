@@ -12,6 +12,7 @@ This document is provided to assist Partners, ISVs (Independent Software Vendors
 | --- | --- | --- |
 | 0.1 | 04-Aug-2026 | Initial draft |
 | 0.2 | 04-Aug-2026 | Retargeted for Partners, ISVs, and GSIs — updated abstract and "What's next" section |
+| 0.3 | 11-Aug-2026 | Added PowerStore health check and OS update steps to Lab 2 |
 
 ### Disclaimer
 
@@ -28,7 +29,7 @@ This is a simulated environment populated with placeholder data intended for dem
 1. Open a web browser and access the following URL: `https://democenter.dell.com/`
 2. Click the **Customer Sign In** link.
 3. Sign in with an existing account or create a new account.
-4. The URL to the Demo Center Test Drive room for **Dell Automation Platform** will be provided by your instructor.
+4. The URL to the Demo Center Take it for a spin room for **Dell Automation Platform** will be provided by your instructor.
 5. You will see a list of Jumphosts. Select and launch the Jumphost that corresponds to your assigned student number.
 6. Log in to the Windows virtual machine with the username and password provided prior to class. Expand the blue panel on the right of the jumphost window and use the **Paste Text** function to copy/paste your username and password.
 7. Launch Chrome. If prompted to configure a default search engine on first login, complete it (or skip if not prompted).
@@ -71,8 +72,13 @@ This is a simulated environment populated with placeholder data intended for dem
 6. In the node console, review the **Overview** tab (power status, health, firmware versions) and the **Physical View** tab (front/back chassis view).
 7. Click the **Updates** tab to see currently installed versions and whether updates are available.
 8. Close the node console and return to the Infrastructure grid. Select the **Free Pool** chip to see servers that are online and ready for provisioning but not yet assigned to a cluster.
+9. Select the **Storage** chip and locate an onboarded **PowerStore** cluster in the grid.
+10. Click the PowerStore cluster name to open its summary.
+11. Review the cluster status, capacity, and current PowerStoreOS version.
+12. Open the **Health** (or **Run Health Check**) section and note the available checks: **System Check**, **Pre-Upgrade Health Check (PUHC)**, and any installed **Health Check thin packages**.
+13. Open the **Updates** tab and note the currently installed PowerStoreOS version and whether an upgrade package is available.
 
-*Checkpoint: You should be able to name at least 3 of the 6 infrastructure categories and describe what a Free Pool asset is.*
+*Checkpoint: You should be able to name at least 3 of the 6 infrastructure categories, describe what a Free Pool asset is, and identify where to find PowerStore health status and OS update information.*
 
 ---
 

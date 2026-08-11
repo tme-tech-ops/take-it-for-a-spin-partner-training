@@ -2,6 +2,16 @@
 
 Hands-on training materials for the "Take It For a Spin" Dell Automation Platform (DAP) session, built for **Partners**, **ISVs** (Independent Software Vendors), and **GSIs** (Global Systems Integrators).
 
+## Why take this training
+
+This half-day, hands-on session gets you out of slide decks and into the Dell Automation Platform interface. By the end, you will know how to navigate the DAP Portal, read Orchestrator health, browse infrastructure inventory, manage identity, find and deploy blueprints, and monitor deployments — all from the perspective of your role:
+
+- **Partners** learn to demo, position, and deploy DAP-based solutions for customers.
+- **ISVs** see how to package and publish their own software as a blueprint in the DAP Catalog.
+- **GSIs** get a head start on Day-2 operations, RBAC, and automation at scale.
+
+No prior DAP experience is required; the labs run in a simulated Demo Center environment with sample inventory and guided walkthroughs.
+
 ## Contents
 
 | File | Description |
