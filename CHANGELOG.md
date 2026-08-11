@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Added a **Why take this training** section to `README.md`.
 
 ### Changed
+- Replaced the Partner bullet in `README.md` with a link to the Dell Private Cloud with DAP Deployment Competency guide.
 - Reorganized repo: guides moved into dedicated `Instructor/` and `Student/` folders; removed `example-content/` reference material after incorporation into the guides.
 - Updated README file paths to match new folder structure.
 - Simplified the wrap-up agenda item by removing the Day-2 preview reference in the Instructor Guide.
