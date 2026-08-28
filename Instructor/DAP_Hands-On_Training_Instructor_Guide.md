@@ -18,6 +18,7 @@ This document is provided to assist instructors in delivering the "Dell Automati
 | 0.6 | 28-Aug-2026 | Added instructor pre-session note to pre-create demo room with 1510 HOL; added facilitation note to minimize lab guide to right side |
 | 0.7 | 28-Aug-2026 | Added PowerStore onboarding certificate/user account, PowerEdge onboarding, and entitlement tokens/certificates (DDPC only) references to Module 1 |
 | 0.8 | 28-Aug-2026 | Enhanced Module 4 with detailed walkthroughs for each Infrastructure filter chip; added External Connection vCenter/Import to NativeEdge, PowerStore Manager link, and Dell Private Cloud plugin showcase via vSphere with all tabs |
+| 0.9 | 28-Aug-2026 | Changed specific vCenter connection name to generic vSphere connection reference in External Connection walkthrough |
 
 ### Disclaimer
 
@@ -203,7 +204,7 @@ By the end of the session, attendees will be able to:
 #### External Connection walkthrough
 
 - Select the **External Connection** chip to show Kubernetes and vCenter connections.
-- Navigate to **Virtual Machines** and locate the `vcsa228220-userfarm.powerx.delllabs.net` connection.
+- Navigate to **Virtual Machines** and locate a vSphere connection.
 - Click on a stopped VM, then click the **More** dropdown to show the **Import to NativeEdge** option. Explain this allows importing VMs to NativeEdge for edge computing scenarios.
 
 #### Storage & PowerStore walkthrough

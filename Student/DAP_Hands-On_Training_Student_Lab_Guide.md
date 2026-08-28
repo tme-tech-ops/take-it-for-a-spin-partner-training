@@ -18,6 +18,7 @@ This document is provided to assist Partners, ISVs (Independent Software Vendors
 | 0.6 | 28-Aug-2026 | Added student prerequisite activities section with link to Partner-Access-Demo-Center.pdf; added on-premises login option and lab guide minimization note |
 | 0.7 | 28-Aug-2026 | Added PowerStore onboarding certificate/user account, PowerEdge onboarding, and entitlement tokens/certificates (DDPC only) references to Lab 1 |
 | 0.8 | 28-Aug-2026 | Enhanced Lab 3 with External Connection vCenter/Import to NativeEdge, PowerStore Manager link, and Dell Private Cloud plugin demonstration note |
+| 0.9 | 28-Aug-2026 | Changed specific vCenter connection name to generic vSphere connection reference in External Connection walkthrough |
 
 ### Disclaimer
 
@@ -119,7 +120,7 @@ Before attending this hands-on training session, please complete the following p
 1. In the left navigation, expand **Inventory** and select **Infrastructure**.
 2. Note the filter chips across the top: **All**, **Private Cloud**, **Edge**, **Storage**, **AI**, **External Connection**, **Free Pool**. Click through each to see how the grid filters.
 3. Select the **External Connection** chip to see Kubernetes and vCenter connections. Note that External Connections currently support Kubernetes and vCenter.
-4. Navigate to **Virtual Machines** and locate the `vcsa228220-userfarm.powerx.delllabs.net` connection. Note that stopped VMs have an **Import to NativeEdge** option in the **More** dropdown for edge computing scenarios.
+4. Navigate to **Virtual Machines** and locate a vSphere connection. Note that stopped VMs have an **Import to NativeEdge** option in the **More** dropdown for edge computing scenarios.
 5. Select the **Private Cloud** chip. You should see clusters such as a VMware, Red Hat OpenShift, and/or Nutanix private cloud.
 6. Click the expand arrow (`>`) next to a cluster row (e.g., `ntnx-dpcvm...`) to reveal its member hosts (service tags, device models).
 7. Click on one member host's service tag link (e.g., an `8SP5L84`-style link) to open its native management console view.
