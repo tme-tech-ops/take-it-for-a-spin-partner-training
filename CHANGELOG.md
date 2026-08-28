@@ -28,9 +28,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed (Unreleased)
 
 - Changed specific vCenter connection name to generic vSphere connection reference in External Connection walkthrough in both Instructor Guide and Student Lab Guide.
-
-### Changed (Unreleased)
-
 - Renamed Module 3 in Instructor Guide from "Identity Management" to "Orchestrator Administrator" with expanded coverage of System Settings, Entitlement, Security, Plugins, and Support tabs.
 - Renamed Lab 2 in Student Lab Guide from "Reviewing Identity Management" to "Orchestrator Administrator" with expanded coverage of System Settings, Entitlement, Security, Plugins, and Support tabs.
 - Updated audience segment references in the Instructor Guide to reflect the new module name (Partners: orchestrator administrator, GSIs: Orchestrator Administrator).
