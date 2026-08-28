@@ -30,7 +30,6 @@ This session is designed to serve three overlapping partner audiences in the sam
 | **ISVs** | Package and publish their own software as a blueprint into the DAP Catalog |
 | **GSI's** | Operate DAP at scale across many customer tenants — access control, automation, and Day-2 lifecycle |
 
-
 ## Master Agenda (High Level)
 
 ~4 hours (half-day), instructor-led, hands-on. Full timing and per-module detail live in the Instructor Guide.
@@ -38,10 +37,10 @@ This session is designed to serve three overlapping partner audiences in the sam
 | # | Module | Focus |
 | --- | --- | --- |
 | 0 | Welcome & Access | Environment access, objectives |
-| 1 | Platform Overview | DAP Portal: Home, Assets, Catalog, Identity Management |
+| 1 | Platform Overview | DAP Portal: Home, Assets, Catalog, Identity Management; onboarding prerequisites (PowerStore certificate/account, PowerEdge, entitlement tokens/certificates DDPC only) |
 | 2 | Orchestrator Dashboard | Alerts, Events, Infrastructure & Deployments health, Rules & Tags |
-| 3 | Inventory & Infrastructure | Filter/browse Private Cloud, Edge, Storage, AI, External Connection, Free Pool; drill into a node |
-| 4 | Identity Management | Roles, Users, Clients, Web Sessions — access control model |
+| 3 | Orchestrator Administrator | System Settings, Entitlement, Security, Plugins, Support |
+| 4 | Inventory & Infrastructure | Filter/browse Private Cloud, Edge, Storage, AI, External Connection, Free Pool; External Connection vCenter/Import to NativeEdge; PowerStore Manager link; Dell Private Cloud plugin showcase via vSphere; drill into a node |
 | 5 | Blueprints Catalog | Offer vs Utility Blueprints; Deploy / Add / Upload |
 | 6 | Deploy a Blueprint | End-to-end deploy wizard (Deployment Name → Configuration → Summary) |
 | 7 | Monitor & Manage Deployments | Deployments list, status, revisions, Day-2 concepts preview |
@@ -53,8 +52,11 @@ This session is designed to serve three overlapping partner audiences in the sam
 Portal (Home)
    │
    ▼
-Orchestrator Dashboard  ──▶  Inventory: Infrastructure  ──▶  Identity Management
-   │                              (drill into a node)              (Roles/Users/Clients)
+Orchestrator Dashboard  ──▶  Orchestrator Administrator  ──▶  Inventory: Infrastructure
+   │                              (System Settings/Entitlement/   (External Connection/
+   │                               Security/Plugins/Support)       PowerStore Manager/
+   │                                                              Dell Private Cloud plugin/
+   │                                                              drill into a node)
    ▼
 Blueprints Catalog (Offer vs Utility)
    │

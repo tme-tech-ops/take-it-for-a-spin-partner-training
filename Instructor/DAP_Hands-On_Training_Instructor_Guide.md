@@ -4,7 +4,7 @@
 
 ### Abstract
 
-This document is provided to assist instructors in delivering the "Dell Automation Platform (DAP) — Take It For a Spin" hands-on training session to **Partners, ISVs (Independent Software Vendors), and GSIs (Global Systems Integrators)**. It contains the session agenda, timing, learning objectives, facilitation notes/talking points, and environment setup checklist. It is a companion to the *DAP Hands-On Training — Student Lab Guide* and should not be distributed to attendees.
+This document is provided to assist instructors in delivering the "Dell Automation Platform (DAP) — Take It For a Spin" hands-on training session to **Partners, ISVs (Independent Software Vendors), and GSIs (Global Systems Integrators)**. It contains the session agenda, timing, learning objectives, facilitation notes/talking points, and environment setup checklist. It is a companion to the *DAP Hands-On Training — Student Lab Guide* and should not be distributed to attendees. While this is a simulator environment, it is built from a live functional environment to provide an authentic hands-on experience.
 
 ### Revisions
 
@@ -13,6 +13,11 @@ This document is provided to assist instructors in delivering the "Dell Automati
 | 0.1 | 04-Aug-2026 | Initial draft, built from Dell Demo Center / DAP Orchestrator walkthrough content |
 | 0.2 | 04-Aug-2026 | Retargeted for Partners, ISVs, and GSIs — added Audience Segments and per-module audience-relevance notes |
 | 0.3 | 11-Aug-2026 | Added PowerStore storage onboarding, health check, and OS update guidance to Module 3 |
+| 0.4 | 28-Aug-2026 | Swapped Module 3 (Inventory) and Module 4 (Identity Management) order |
+| 0.5 | 28-Aug-2026 | Renamed Module 3 to "Orchestrator Administrator" with expanded tab coverage (System Settings, Entitlement, Security, Plugins, Support); added simulator note to abstract |
+| 0.6 | 28-Aug-2026 | Added instructor pre-session note to pre-create demo room with 1510 HOL; added facilitation note to minimize lab guide to right side |
+| 0.7 | 28-Aug-2026 | Added PowerStore onboarding certificate/user account, PowerEdge onboarding, and entitlement tokens/certificates (DDPC only) references to Module 1 |
+| 0.8 | 28-Aug-2026 | Enhanced Module 4 with detailed walkthroughs for each Infrastructure filter chip; added External Connection vCenter/Import to NativeEdge, PowerStore Manager link, and Dell Private Cloud plugin showcase via vSphere with all tabs |
 
 ### Disclaimer
 
@@ -36,9 +41,9 @@ This session is designed to serve three overlapping but distinct partner audienc
 
 | Segment | Primary motivation | Modules of highest interest |
 | --- | --- | --- |
-| **Partners** (resellers/field engineers) | Learn to demo, quote, and deploy DAP-based solutions for customers | Modules 1–3, 6–7 (portal tour, inventory, deploy, monitor) |
+| **Partners** (resellers/field engineers) | Learn to demo, quote, and deploy DAP-based solutions for customers | Modules 1–4, 6–7 (portal tour, orchestrator administrator, inventory, deploy, monitor) |
 | **ISVs** (Independent Software Vendors) | Understand how to package and publish their own software as a blueprint into the Catalog for customers to consume | Modules 5–6 (Blueprints Catalog, Deploy) — emphasize the Offer Blueprint model and Upload path |
-| **GSIs** (Global Systems Integrators) | Operate DAP at scale across many customers/tenants — access control, automation, and Day-2 lifecycle matter most | Modules 4, 7 (Identity Management/RBAC, Deployments/Day-2 concepts) |
+| **GSIs** (Global Systems Integrators) | Operate DAP at scale across many customers/tenants — access control, automation, and Day-2 lifecycle matter most | Modules 3, 7 (Orchestrator Administrator, Deployments/Day-2 concepts) |
 
 Call out audience relevance explicitly at the start of each module (see talking points below) so each group knows why a given screen matters to their role.
 
@@ -60,6 +65,7 @@ By the end of the session, attendees will be able to:
 - Each module follows a **Tell → Show → Do** pattern: brief lecture, live instructor demo, then attendees repeat the steps themselves from the Student Lab Guide.
 - Encourage attendees to explore filters/columns rather than only following steps verbatim — the portal is read-mostly and safe to click around in.
 - Have a rollback/reset plan: know how to reset a given student environment/project if a deployment fails or gets stuck.
+- Instruct attendees to minimize the lab guide to the right side of their screen for easy reference while working in the DAP interface.
 
 ---
 
@@ -70,9 +76,9 @@ By the end of the session, attendees will be able to:
 | 0:00–0:15 | 15 min | Welcome, objectives, environment access | Lecture |
 | 0:15–0:35 | 20 min | Module 1: Platform Overview (Home, Assets, Catalog, Identity Management cards) | Lecture + Demo |
 | 0:35–1:00 | 25 min | Module 2: Orchestrator Dashboard | Demo + Lab |
-| 1:00–1:35 | 35 min | Module 3: Inventory & Infrastructure deep dive | Demo + Lab |
+| 1:00–1:35 | 35 min | Module 3: Orchestrator Administrator (System Settings, Entitlement, Security, Plugins, Support) | Demo + Lab |
 | 1:35–1:45 | 10 min | Break | — |
-| 1:45–2:15 | 30 min | Module 4: Identity Management (Roles, Users, Clients, Web Sessions) | Demo + Lab |
+| 1:45–2:15 | 30 min | Module 4: Inventory & Infrastructure deep dive | Demo + Lab |
 | 2:15–2:30 | 15 min | Module 5: Blueprints Catalog | Demo |
 | 2:30–3:15 | 45 min | Module 6: Deploy a Blueprint (guided lab) | Lab |
 | 3:15–3:25 | 10 min | Break | — |
@@ -94,6 +100,9 @@ By the end of the session, attendees will be able to:
 - The Portal Home page is the entry point above the Orchestrator: **Assets** (onboard/monitor Dell hardware), **Catalog** (curated library of validated blueprints/plugins), **Identity Management** (users/access).
 - **Manage Your Infrastructure → Orchestrator** is where day-to-day inventory, blueprint, and deployment work happens (opens in a new tab/window).
 - Point out **Additional Services** (AIOps Integration, AI Solution Assistant) as "Coming Soon" — sets roadmap expectations without over-promising.
+- **PowerStore onboarding prerequisites:** Mention that onboarding PowerStore arrays requires a dedicated local PowerStore account with the Storage Administrator role, and TLS trust with the PowerStore management certificate. The DAP OXY component must be able to reach the floating management IP and all cluster nodes.
+- **PowerEdge onboarding:** Note that PowerEdge servers can be onboarded as individual assets or as part of clusters (Private Cloud, Free Pool). Onboarding typically involves network connectivity, credentials, and discovery mechanisms.
+- **Entitlement tokens and certificates:** Explain that entitlement tokens and certificates are DDPC (Dell Demo Center) only features used for validating access and licensing in the demo environment. These are not used in production DAP deployments.
 
 **Demo:** Log into the Portal, tour each card, click "Go to Orchestrator."
 
@@ -120,7 +129,59 @@ By the end of the session, attendees will be able to:
 
 ---
 
-### Module 3 — Inventory & Infrastructure Deep Dive (35 min)
+### Module 3 — Orchestrator Administrator (35 min)
+
+**Objective:** Understand the Orchestrator's administrative settings and configuration options.
+
+**Audience relevance:** This is the **GSI headline module** — GSIs operating DAP across many customer environments need to understand system settings, entitlements, security configurations, and plugin management for proper platform administration. ISVs should pay attention to **Plugins** as this is where custom blueprint components and integrations are managed. Partners mainly need to understand the **Support** tab for troubleshooting and the **Entitlement** tab for license management during customer engagements.
+
+**Talking points:**
+
+- Reached via gear icon → **Settings**. Walk through each tab:
+
+#### System Settings
+
+- Platform-wide configuration options including time zone, date/time format, and regional settings
+- System information such as version, build number, and platform details
+- Notification settings and alert thresholds
+
+#### Entitlement
+
+- License management and subscription information
+- Feature entitlements and capabilities enabled for the tenant
+- Usage metrics and consumption tracking
+- License expiration and renewal information
+
+#### Security
+
+- Authentication and authorization settings
+- SSL/TLS certificate management
+- Password policies and security configurations
+- Audit logging and security event tracking
+
+#### Plugins
+
+- Available plugins for extending DAP functionality
+- Plugin installation, configuration, and management
+- Custom blueprint components and integration points
+- Plugin versioning and update management
+
+#### Support
+
+- Platform health and diagnostic information
+- Support ticket creation and management
+- System logs and troubleshooting resources
+- Contact information for Dell support
+
+- Tie back to real-world scenarios per audience: a GSI managing 30 customer tenants needs to standardize system settings and security policies across tenants; an ISV uses Plugins to integrate their custom components; a Partner uses Support to resolve issues and Entitlement to validate customer licenses.
+
+**Demo:** Open Settings, step through each tab (System Settings, Entitlement, Security, Plugins, Support) and explain the key options available in each.
+
+**Lab checkpoint:** Attendees identify which settings tab they would use for common administrative tasks (e.g., where to check license status, where to manage plugins, where to configure security settings).
+
+---
+
+### Module 4 — Inventory & Infrastructure Deep Dive (30 min)
 
 **Objective:** Navigate multi-asset-type inventory and drill into a physical node.
 
@@ -129,14 +190,50 @@ By the end of the session, attendees will be able to:
 **Talking points:**
 
 - Left nav under **Inventory**: Infrastructure, Virtual Machines, Deployments, Blueprints.
-- Infrastructure filter chips: **All / Private Cloud / Edge / Storage / AI / External Connection / Free Pool** — explain each category (e.g., Private Cloud = Nutanix/VMware/OpenShift clusters; Free Pool = unassigned/bare PowerEdge servers ready for provisioning).
+- Infrastructure filter chips: **All / Private Cloud / Edge / Storage / AI / External Connection / Free Pool** — step through each chip and explain the category:
+  - **Private Cloud** = Nutanix/VMware/OpenShift clusters
+  - **Edge** = edge computing assets
+  - **Storage** = storage arrays including PowerStore
+  - **AI** = AI infrastructure assets
+  - **External Connection** = Kubernetes and vCenter connections at this time
+  - **Free Pool** = unassigned/bare PowerEdge servers ready for provisioning
 - Grid columns matter: Asset Type, Environment, Status, Provisioning State, Device Model, Version, Tags — these drive filtering/sorting at scale.
 - Expandable rows show child hosts under a cluster (e.g., a Nutanix cluster expands into its member PowerEdge hosts with service tags).
+
+#### External Connection walkthrough
+
+- Select the **External Connection** chip to show Kubernetes and vCenter connections.
+- Navigate to **Virtual Machines** and locate the `vcsa228220-userfarm.powerx.delllabs.net` connection.
+- Click on a stopped VM, then click the **More** dropdown to show the **Import to NativeEdge** option. Explain this allows importing VMs to NativeEdge for edge computing scenarios.
+
+#### Storage & PowerStore walkthrough
+
+- Select the **Storage** chip to show storage assets.
+- Click on a PowerStore row to open its summary.
+- Click the **PowerStore Manager** link to launch the PowerStore management interface. This provides direct access to the native PowerStore console for advanced storage management.
+
+#### Dell Private Cloud plugin showcase via vSphere
+
+- Navigate to **Infrastructure → Private Cloud VMware vSphere**.
+- Click **Launch Dell Private Cloud** in the top right to open the vSphere interface.
+- Navigate to **Datacenter → Cluster** then click the **Configure** tab.
+- Scroll to the **Dell Private Cloud** plugin and showcase all available tabs:
+  - **System** — overall system health and status
+  - **Physical View** — front/back chassis view with health information
+  - **Settings** — configuration options
+  - **Updates** — firmware and software updates (zero day patching allowed)
+  - **Security** — security settings and policies
+  - **Support** — support resources and diagnostics
+- Emphasize that all Dell Private Cloud outcomes have the same set of tabs, allowing for administrative consistency across different outcomes.
+- **Important:** When finished with the vSphere walkthrough, logout from vSphere to return to the Orchestrator simulator. Only show this vSphere perspective once during the module.
+
+#### Node drilling walkthrough
+
 - Drilling into a node opens its native management console view (Overview / Physical View / Updates / Security / Settings / Support) — show Physical View (front/back chassis view with health), and Updates tab (firmware/update advisor).
 
-#### Storage & PowerStore specifics
+#### Storage & PowerStore lifecycle details
 
-PowerStore arrays appear as **Storage** assets in DAP once onboarded. Use these points when attendees ask how storage is brought under DAP management or what lifecycle actions are available.
+PowerStore arrays appear as **Storage** assets in DAP once onboarded. Use these points when attendees ask about PowerStore lifecycle management:
 
 - **Prerequisites for onboarding:** PowerStore T or Q model running **PowerStoreOS 3.0 or later** (PowerStoreOS 4.0 or later is required for DAP-orchestrated software upgrades); a dedicated local PowerStore account with the **Storage Administrator** role; TLS trust with the PowerStore management certificate; the DAP OXY component able to reach the floating management IP and all cluster nodes.
 - **Onboarding flow:** In the DAP Portal, go to **Home → Go to Assets → Add Assets → Storage**. Enter the floating management IP, the dedicated Storage Administrator credentials, and certificate information, then click **Onboard**.
@@ -154,28 +251,9 @@ PowerStore arrays appear as **Storage** assets in DAP once onboarded. Use these 
   6. Re-run health checks after the upgrade completes.
 - **Planning note:** Nondisruptive upgrades (NDU) are supported, but plan them during maintenance windows or low activity because half of the system hardware resources may be unavailable during parts of the upgrade. Also verify that any installed Health Check, Language Pack, or Disk Firmware packages are compatible with the new PowerStoreOS release.
 
-**Demo:** Filter to Private Cloud, expand a cluster, open a member host, review Physical View and Updates.
+**Demo:** Step through each Infrastructure filter chip (All, Private Cloud, Edge, Storage, AI, External Connection, Free Pool). For External Connection, show the vCenter connection and Import to NativeEdge option. For Storage, show PowerStore Manager link. Launch Dell Private Cloud via vSphere and showcase all plugin tabs. Expand a cluster, open a member host, review Physical View and Updates.
 
-**Lab checkpoint:** Attendees filter by each asset-type chip once, open one node's Physical View, and identify PowerStore health status and OS update information in the Infrastructure grid.
-
----
-
-### Module 4 — Identity Management (30 min)
-
-**Objective:** Understand access control model (roles vs users vs clients vs sessions).
-
-**Audience relevance:** This is the **GSI headline module** — GSIs operating DAP across many customer environments live and die by correct RBAC and clean separation of duties. ISVs should pay attention to **Clients** (API/service accounts), since blueprint publishing and automated testing pipelines typically authenticate this way rather than as an interactive user. Partners mainly need to know who to ask for elevated access during a customer engagement.
-
-**Talking points:**
-
-- Reached via gear icon → **Settings → Identity Management**.
-- **Roles** tab: predefined roles split by scope — *Portal* (Viewer, Administrator, Operational Manager) vs *Orchestrator* (Viewer, Administrator, Application Admin, Operational Manager). Emphasize least-privilege: assign the narrowest role that meets the need.
-- **Users**, **Clients** (service accounts / API clients), **Web Sessions** tabs — mention Clients as the mechanism for programmatic/API access (relevant to ISV CI/CD pipelines publishing blueprints, and GSI automation).
-- Tie back to real-world scenarios per audience: a GSI managing 30 customer tenants needs role standardization across tenants; an ISV needs a Client credential for their build pipeline; a Partner needs to know who to ask for elevated access during a customer engagement/POC vs production rollout.
-
-**Demo:** Open Roles tab, explain each predefined role; open Users tab and show "Manage Users."
-
-**Lab checkpoint:** Attendees list which role they believe they were assigned and why.
+**Lab checkpoint:** Attendees filter by each asset-type chip once, identify the External Connection options, locate PowerStore Manager link, and open one node's Physical View to identify health status and update information.
 
 ---
 
@@ -251,6 +329,7 @@ PowerStore arrays appear as **Storage** assets in DAP once onboarded. Use these 
 
 ## 4. Pre-Session Setup Checklist (Instructor)
 
+- [ ] A couple days before the class start, pre-create the demo room and have the 1510 HOL loaded.
 - [ ] Confirm Demo Center / DAP Take it for a spin room URL and per-student jumphost/login list.
 - [ ] Verify sample inventory is online (Private Cloud, Edge, Storage, Free Pool nodes all "Online"/"Connected").
 - [ ] Verify at least one deployable Offer Blueprint per attendee/project namespace.
