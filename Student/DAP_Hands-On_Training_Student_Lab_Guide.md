@@ -89,7 +89,6 @@ Before attending this hands-on training session, please complete the following p
 
 1. From the Orchestrator, click the gear icon (**Settings**) in the top-right.
 2. Review the **System Settings** tab:
-   - Note the platform-wide configuration options including time zone, date/time format, and regional settings
    - Review system information such as version, build number, and platform details
    - Check notification settings and alert thresholds
 3. Review the **Entitlement** tab:
@@ -103,7 +102,6 @@ Before attending this hands-on training session, please complete the following p
 5. Review the **Plugins** tab:
    - Note available plugins for extending DAP functionality
    - Review plugin installation, configuration, and management options
-   - Check for custom blueprint components and integration points
 6. Review the **Support** tab:
    - Note platform health and diagnostic information
    - Review support ticket creation and management options
@@ -124,14 +122,12 @@ Before attending this hands-on training session, please complete the following p
 5. Select the **Private Cloud** chip. You should see clusters such as a VMware, Red Hat OpenShift, and/or Nutanix private cloud.
 6. Click the expand arrow (`>`) next to a cluster row (e.g., `ntnx-dpcvm...`) to reveal its member hosts (service tags, device models).
 7. Click on one member host's service tag link (e.g., an `8SP5L84`-style link) to open its native management console view.
-8. In the node console, review the **Overview** tab (power status, health, firmware versions) and the **Physical View** tab (front/back chassis view).
-9. Click the **Updates** tab to see currently installed versions and whether updates are available.
-10. Close the node console and return to the Infrastructure grid. Select the **Free Pool** chip to see servers that are online and ready for provisioning but not yet assigned to a cluster.
-11. Select the **Storage** chip and locate an onboarded **PowerStore** cluster in the grid.
-12. Click the PowerStore cluster name to open its summary. Note the **PowerStore Manager** link that launches the native PowerStore management interface.
-13. Review the cluster status, capacity, and current PowerStoreOS version.
-14. Open the **Health** (or **Run Health Check**) section and note the available checks: **System Check**, **Pre-Upgrade Health Check (PUHC)**, and any installed **Health Check thin packages**.
-15. Open the **Updates** tab and note the currently installed PowerStoreOS version and whether an upgrade package is available.
+8. Close the node console and return to the Infrastructure grid. Select the **Free Pool** chip to see servers that are online and ready for provisioning but not yet assigned to a cluster.
+9. Select the **Storage** chip and locate an onboarded **PowerStore** cluster in the grid.
+10. Click the PowerStore cluster name to open its summary. Note the **PowerStore Manager** link that launches the native PowerStore management interface.
+11. Review the cluster status, and current PowerStoreOS version.
+12. Open the **Health** (or **Run Health Check**) section and note the available checks: **System Check**, **Pre-Upgrade Health Check (PUHC)**, and any installed **Health Check thin packages**.
+13. Open the **Updates** tab and note the currently installed PowerStoreOS version and whether an upgrade package is available.
 
 *Note: Your instructor will demonstrate the Dell Private Cloud plugin via vSphere, showcasing the System, Physical View, Settings, Updates (zero day patching), Security, and Support tabs. All Dell Private Cloud outcomes have the same set of tabs for administrative consistency.*
 
