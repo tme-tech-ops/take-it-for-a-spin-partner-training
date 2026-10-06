@@ -1,0 +1,5 @@
+# Module 4 - Lab 3
+
+**15 minutes**
+
+**Checkpoint:** You should be able to name at least 3 of the 6 infrastructure categories, describe what a Free Pool asset is, identify External Connection options, locate the PowerStore Manager link, and identify where to find PowerStore health status and OS update information.
