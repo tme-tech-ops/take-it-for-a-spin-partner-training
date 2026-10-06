@@ -4,7 +4,7 @@
 
 ### Abstract
 
-This document is provided to assist instructors in delivering the "Dell Automation Platform (DAP) — Take It For a Spin" hands-on training session to **Partners, ISVs (Independent Software Vendors), and GSIs (Global Systems Integrators)**. It contains the session agenda, timing, learning objectives, facilitation notes/talking points, and environment setup checklist. It is a companion to the *DAP Hands-On Training — Student Lab Guide* and should not be distributed to attendees. While this is a simulator environment, it is built from a live functional environment to provide an authentic hands-on experience.
+This document is provided to assist instructors in delivering the "Dell Automation Platform (DAP) — Take It For a Spin" hands-on training session to **Partners, ISVs (Independent Software Vendors), and GSIs (Global Systems Integrators)**. It contains the session agenda, timing, learning objectives, facilitation notes/talking points, and environment setup checklist. It is a companion to the *DAP Hands-On Training — Student Lab Guide*. While this is a simulator environment, it is built from a live functional environment to provide an authentic hands-on experience.
 
 ### Revisions
 

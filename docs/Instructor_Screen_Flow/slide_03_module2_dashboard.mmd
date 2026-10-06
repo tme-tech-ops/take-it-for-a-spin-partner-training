@@ -1,48 +1,27 @@
-block-beta
-    columns 4
-    
-    block:header:4
-        A["Module 2 - Orchestrator Dashboard (25 minutes)"]
-    end
-    
-    B["Open Dashboard"]
-    C["Review Platform Health"]
-    space:2
-    
-    block:alerts:4
-        D["Alerts last 24 hours"]
-        E["Critical"]
-        F["Error"]
-        G["Warning"]
-    end
-    
-    block:events:4
-        H["Events Table"]
-        I["Web-socket connections"]
-        J["Executions"]
-        K["Drift checks"]
-    end
-    
-    block:rings:4
-        L["Infrastructure Ring"]
-        M["Processing / Online / Disconnected"]
-        N["Deployments Ring"]
-        O["Completed / In Progress / Failed"]
-    end
-    
-    block:rules:4
-        P["Rules and Tags"]
-        Q["Automation rules"]
-        R["Resource tags"]
-        space
-    end
-    
-    S["Click View All on Alerts/Events"]
-    space:3
-    
-    block:checkpoint:4
-        T["Checkpoint: Identify Online vs Disconnected assets and Completed vs Failed deployments"]
-    end
-
-    style A fill:#e1f5ff
-    style T fill:#ffe1e1
+mindmap
+  root((Module 2 - Orchestrator Dashboard))
+    25 minutes
+    Open Dashboard
+    Review Platform Health
+    Alerts last 24 hours
+      Critical
+      Error
+      Warning
+      Information
+    Events Table
+      Web-socket connections
+      Executions
+      Drift checks
+    Infrastructure Ring
+      Processing
+      Online
+      Disconnected
+    Deployments Ring
+      Completed
+      In Progress
+      Failed
+    Rules and Tags
+    Click View All on Alerts/Events
+    Checkpoint
+      Identify Online vs Disconnected assets
+      Identify Completed vs Failed deployments
