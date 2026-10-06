@@ -332,8 +332,4 @@ PowerStore arrays appear as **Storage** assets in DAP once onboarded. Use these 
 
 - [ ] A couple days before the class start, pre-create the demo room and have the 1510 HOL loaded.
 - [ ] Confirm Demo Center / DAP Take it for a spin room URL and per-student login list.
-- [ ] Verify sample inventory is online (Private Cloud, Edge, Storage, Free Pool nodes all "Online"/"Connected").
-- [ ] Verify at least one deployable Offer Blueprint per attendee/project namespace.
-- [ ] Pre-stage any required input files (e.g., service tags, IPs) attendees will need to paste into the Configuration step.
-- [ ] Test the full deploy wizard once end-to-end in the training tenant before class.
-- [ ] Have a reset/rollback procedure ready in case a deployment needs to be deleted and redeployed mid-class.
+- [ ] Day of class, ensure the demo room is accessible and the 1510 HOL is loaded.
