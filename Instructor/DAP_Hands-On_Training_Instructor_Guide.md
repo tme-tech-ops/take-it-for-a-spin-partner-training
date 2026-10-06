@@ -67,6 +67,7 @@ By the end of the session, attendees will be able to:
 - Encourage attendees to explore filters/columns rather than only following steps verbatim — the portal is read-mostly and safe to click around in.
 - Have a rollback/reset plan: know how to reset a given student environment/project if a deployment fails or gets stuck.
 - Instruct attendees to minimize the lab guide to the right side of their screen for easy reference while working in the DAP interface.
+- **Screen Flow Slides:** Display the corresponding slide from `docs/Instructor_Screen_Flow/` on the instructor screen during each lab to keep students aligned and on track. Each slide shows the module name, duration, and checkpoint criteria.
 
 ---
 
@@ -89,6 +90,12 @@ By the end of the session, attendees will be able to:
 ---
 
 ## 3. Module Detail
+
+### Welcome & Introduction (15 min)
+
+**Display on screen:** [`slide_01_introduction.md`](../docs/Instructor_Screen_Flow/slide_01_introduction.md)
+
+---
 
 ### Module 1 — Platform Overview (20 min)
 
@@ -113,6 +120,8 @@ By the end of the session, attendees will be able to:
 
 ### Module 2 — Orchestrator Dashboard (25 min)
 
+**Display on screen:** [`slide_02_module2_lab1.md`](../docs/Instructor_Screen_Flow/slide_02_module2_lab1.md)
+
 **Objective:** Teach attendees to read platform health at a glance.
 
 **Audience relevance:** Partners use this as their "is everything healthy before a customer demo" check. GSIs will use this daily/at scale across customer tenants — emphasize that Events and Alerts are the first triage screen when supporting many deployments.
@@ -131,6 +140,8 @@ By the end of the session, attendees will be able to:
 ---
 
 ### Module 3 — Orchestrator Administrator (35 min)
+
+**Display on screen:** [`slide_03_module3_lab2.md`](../docs/Instructor_Screen_Flow/slide_03_module3_lab2.md)
 
 **Objective:** Understand the Orchestrator's administrative settings and configuration options.
 
@@ -183,6 +194,8 @@ By the end of the session, attendees will be able to:
 ---
 
 ### Module 4 — Inventory & Infrastructure Deep Dive (30 min)
+
+**Display on screen:** [`slide_04_module4_lab3.md`](../docs/Instructor_Screen_Flow/slide_04_module4_lab3.md)
 
 **Objective:** Navigate multi-asset-type inventory and drill into a physical node.
 
@@ -260,6 +273,8 @@ PowerStore arrays appear as **Storage** assets in DAP once onboarded. Use these 
 
 ### Module 5 — Blueprints Catalog (15 min)
 
+**Display on screen:** [`slide_05_module5_lab4.md`](../docs/Instructor_Screen_Flow/slide_05_module5_lab4.md)
+
 **Objective:** Understand blueprint sourcing before deploying one.
 
 **Audience relevance:** This is the **ISV headline module**. The Catalog is the mechanism by which an ISV's packaged software/solution becomes discoverable and deployable by Partners and GSIs' customers. Be explicit that "Upload" is the ISV's path to publish their own blueprint, and that Offer Blueprint metadata (Tags, Revision, Deployments count) is what customers will use to evaluate and trust a published solution.
@@ -276,6 +291,8 @@ PowerStore arrays appear as **Storage** assets in DAP once onboarded. Use these 
 ---
 
 ### Module 6 — Deploy a Blueprint (45 min, core lab)
+
+**Display on screen:** [`slide_06_module6_lab5.md`](../docs/Instructor_Screen_Flow/slide_06_module6_lab5.md)
 
 **Objective:** Attendees perform a full deployment using the wizard.
 
@@ -300,6 +317,8 @@ PowerStore arrays appear as **Storage** assets in DAP once onboarded. Use these 
 ---
 
 ### Module 7 — Monitor & Manage Deployments (25 min)
+
+**Display on screen:** [`slide_07_module7_lab6.md`](../docs/Instructor_Screen_Flow/slide_07_module7_lab6.md)
 
 **Objective:** Close the loop — verify and track what was deployed.
 
