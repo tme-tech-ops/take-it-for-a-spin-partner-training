@@ -1,17 +1,36 @@
-flowchart TD
-    A[Module 2 - Lab 1<br/>15 minutes] --> B[Open DAP Portal]
-    B --> C[Sign in with credentials]
-    C --> D[Review Home Page Cards]
-    D --> E[Assets Card]
-    D --> F[Catalog Card]
-    D --> G[Identity Management Card]
-    G --> H[Click Go to Orchestrator]
-    H --> I[Review Dashboard]
-    I --> J[Alerts last 24 hours]
-    I --> K[Events log]
-    I --> L[Infrastructure and Deployments rings]
-    I --> M[Rules and Tags]
-    M --> N[Checkpoint: State Online assets<br/>and Completed/Failed deployments]
+block-beta
+    columns 4
+    
+    block:header:4
+        A["Module 2 - Lab 1 (15 minutes)"]
+    end
+    
+    B["Open DAP Portal"]
+    C["Sign in with credentials"]
+    D["Review Home Page Cards"]
+    space
+    
+    block:cards:4
+        E["Assets Card"]
+        F["Catalog Card"]
+        G["Identity Management Card"]
+        space
+    end
+    
+    H["Click Go to Orchestrator"]
+    I["Review Dashboard"]
+    space:2
+    
+    block:dashboard:4
+        J["Alerts last 24 hours"]
+        K["Events log"]
+        L["Infrastructure and Deployments rings"]
+        M["Rules and Tags"]
+    end
+    
+    block:checkpoint:4
+        N["Checkpoint: State Online assets and Completed/Failed deployments"]
+    end
 
     style A fill:#e1f5ff
     style N fill:#ffe1e1

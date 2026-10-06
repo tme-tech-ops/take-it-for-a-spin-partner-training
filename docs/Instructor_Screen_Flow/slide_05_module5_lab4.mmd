@@ -1,21 +1,39 @@
-flowchart TD
-    A[Module 5 - Lab 4<br/>15 minutes] --> B[Expand Inventory]
-    B --> C[Select Blueprints]
-    C --> D[Review Offer Blueprints tab]
-    D --> E[Grid columns review]
-    E --> F[Name]
-    E --> G[Status]
-    E --> H[Revision]
-    E --> I[Type]
-    E --> J[Revision Date]
-    E --> K[Deployments]
-    E --> L[Created By]
-    E --> M[Tags]
-    M --> N[Sort by Deployments column]
-    N --> O[Click Utility Blueprints tab]
-    O --> P[Note infrastructure/services support]
-    P --> Q[Return to Offer Blueprints tab]
-    Q --> R[Select blueprint for deployment]
+block-beta
+    columns 4
+    
+    block:header:4
+        A["Module 5 - Lab 4 (15 minutes)"]
+    end
+    
+    B["Expand Inventory"]
+    C["Select Blueprints"]
+    D["Review Offer Blueprints tab"]
+    E["Grid columns review"]
+    
+    block:columns:4
+        F["Name"]
+        G["Status"]
+        H["Revision"]
+        I["Type"]
+    end
+    
+    block:columns2:4
+        J["Revision Date"]
+        K["Deployments"]
+        L["Created By"]
+        M["Tags"]
+    end
+    
+    block:actions:4
+        N["Sort by Deployments column"]
+        O["Click Utility Blueprints tab"]
+        P["Note infrastructure/services support"]
+        Q["Return to Offer Blueprints tab"]
+    end
+    
+    block:checkpoint:4
+        R["Select blueprint for deployment"]
+    end
 
     style A fill:#e1f5ff
     style R fill:#ffe1e1

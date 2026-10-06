@@ -1,27 +1,64 @@
-flowchart TD
-    A[Module 6 - Lab 5<br/>20 minutes] --> B[Select Offer Blueprint]
-    B --> C[Click Deploy]
-    C --> D[Step 1: Deployment Name]
-    D --> E[Enter unique deployment name]
-    E --> F[Click Next]
-    F --> G[Step 2: Configuration]
-    G --> H[Optional: Browse for input file]
-    H --> I[Fill required fields marked with *]
-    I --> J[File Server Root Path]
-    I --> K[Use Dell Automation Platform file server]
-    I --> L[Cluster Hosts table]
-    L --> M[Add service_tag]
-    M --> N[Add hypervisor_ip]
-    N --> O[Add controller_vm_ip]
-    O --> P[Click Add after each row]
-    P --> Q[Watch walkthrough video if available]
-    Q --> R[Click Next]
-    R --> S[Step 3: Summary]
-    S --> T[Review all entered values]
-    T --> U[Click Deploy]
-    U --> V[Navigate to Inventory Deployments]
-    V --> W[Confirm deployment in list]
-    W --> X[Checkpoint: Deployment visible<br/>in Deployments list<br/>Status: Deployed or In Progress]
+block-beta
+    columns 4
+    
+    block:header:4
+        A["Module 6 - Lab 5 (20 minutes)"]
+    end
+    
+    B["Select Offer Blueprint"]
+    C["Click Deploy"]
+    space:2
+    
+    block:step1:4
+        D["Step 1: Deployment Name"]
+        E["Enter unique deployment name"]
+        F["Click Next"]
+        space
+    end
+    
+    block:step2:4
+        G["Step 2: Configuration"]
+        H["Optional: Browse for input file"]
+        I["Fill required fields marked with *"]
+        space
+    end
+    
+    block:fields:4
+        J["File Server Root Path"]
+        K["Use Dell Automation Platform file server"]
+        L["Cluster Hosts table"]
+        space
+    end
+    
+    block:table:4
+        M["Add service_tag"]
+        N["Add hypervisor_ip"]
+        O["Add controller_vm_ip"]
+        P["Click Add after each row"]
+    end
+    
+    block:video:4
+        Q["Watch walkthrough video if available"]
+        R["Click Next"]
+        space:2
+    end
+    
+    block:step3:4
+        S["Step 3: Summary"]
+        T["Review all entered values"]
+        U["Click Deploy"]
+        space
+    end
+    
+    block:verify:4
+        V["Navigate to Inventory Deployments"]
+        W["Confirm deployment in list"]
+        space:2
+    end
+    
+    block:checkpoint:4
+        X["Checkpoint: Deployment visible in Deployments list - Status: Deployed or In Progress"]
+    end
 
     style A fill:#e1f5ff
     style X fill:#ffe1e1

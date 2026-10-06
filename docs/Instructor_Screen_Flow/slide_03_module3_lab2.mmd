@@ -1,26 +1,51 @@
-flowchart TD
-    A[Module 3 - Lab 2<br/>15 minutes] --> B[Click gear icon Settings]
-    B --> C[Review System Settings tab]
-    C --> D[Platform-wide configuration]
-    C --> E[System information]
-    C --> F[Notification settings]
-    F --> G[Review Entitlement tab]
-    G --> H[License management]
-    G --> I[Feature entitlements]
-    G --> J[Usage metrics]
-    J --> K[Review Security tab]
-    K --> L[Authentication settings]
-    K --> M[SSL/TLS certificates]
-    K --> N[Password policies]
-    N --> O[Review Plugins tab]
-    O --> P[Available plugins]
-    O --> Q[Plugin installation]
-    O --> R[Custom components]
-    R --> S[Review Support tab]
-    S --> T[Platform health]
-    S --> U[Support tickets]
-    S --> V[System logs]
-    V --> W[Checkpoint: Identify settings tab<br/>for common administrative tasks]
+block-beta
+    columns 4
+    
+    block:header:4
+        A["Module 3 - Lab 2 (15 minutes)"]
+    end
+    
+    B["Click gear icon Settings"]
+    space:3
+    
+    block:systemsettings:4
+        C["Review System Settings tab"]
+        D["Platform-wide configuration"]
+        E["System information"]
+        F["Notification settings"]
+    end
+    
+    block:entitlement:4
+        G["Review Entitlement tab"]
+        H["License management"]
+        I["Feature entitlements"]
+        J["Usage metrics"]
+    end
+    
+    block:security:4
+        K["Review Security tab"]
+        L["Authentication settings"]
+        M["SSL/TLS certificates"]
+        N["Password policies"]
+    end
+    
+    block:plugins:4
+        O["Review Plugins tab"]
+        P["Available plugins"]
+        Q["Plugin installation"]
+        R["Custom components"]
+    end
+    
+    block:support:4
+        S["Review Support tab"]
+        T["Platform health"]
+        U["Support tickets"]
+        V["System logs"]
+    end
+    
+    block:checkpoint:4
+        W["Checkpoint: Identify settings tab for common administrative tasks"]
+    end
 
     style A fill:#e1f5ff
     style W fill:#ffe1e1

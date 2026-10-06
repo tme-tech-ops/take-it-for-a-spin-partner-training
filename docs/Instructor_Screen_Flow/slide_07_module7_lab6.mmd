@@ -1,23 +1,51 @@
-flowchart TD
-    A[Module 7 - Lab 6<br/>15 minutes] --> B[Go to Inventory Deployments]
-    B --> C[Locate deployment by name]
-    C --> D[Review columns]
-    D --> E[Target]
-    D --> F[Created]
-    D --> G[Status]
-    D --> H[Blueprint Name]
-    D --> I[Revision]
-    D --> J[Type]
-    D --> K[Deployments sub-deployment count]
-    D --> L[Last Updated]
-    D --> M[Tags]
-    M --> N[Click deployment name]
-    N --> O[Open detail view]
-    O --> P[Review execution history]
-    P --> Q[If Failed Install]
-    Q --> R[Review execution log]
-    R --> S[Identify failed step]
-    S --> T[Checkpoint: Describe deployment status<br/>and blueprint/revision deployed]
+block-beta
+    columns 4
+    
+    block:header:4
+        A["Module 7 - Lab 6 (15 minutes)"]
+    end
+    
+    B["Go to Inventory Deployments"]
+    C["Locate deployment by name"]
+    D["Review columns"]
+    space
+    
+    block:columns:4
+        E["Target"]
+        F["Created"]
+        G["Status"]
+        H["Blueprint Name"]
+    end
+    
+    block:columns2:4
+        I["Revision"]
+        J["Type"]
+        K["Deployments sub-deployment count"]
+        L["Last Updated"]
+    end
+    
+    block:columns3:4
+        M["Tags"]
+        space:3
+    end
+    
+    block:detail:4
+        N["Click deployment name"]
+        O["Open detail view"]
+        P["Review execution history"]
+        space
+    end
+    
+    block:failed:4
+        Q["If Failed Install"]
+        R["Review execution log"]
+        S["Identify failed step"]
+        space
+    end
+    
+    block:checkpoint:4
+        T["Checkpoint: Describe deployment status and blueprint/revision deployed"]
+    end
 
     style A fill:#e1f5ff
     style T fill:#ffe1e1
