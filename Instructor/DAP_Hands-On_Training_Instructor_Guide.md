@@ -331,7 +331,7 @@ PowerStore arrays appear as **Storage** assets in DAP once onboarded. Use these 
 ## 4. Pre-Session Setup Checklist (Instructor)
 
 - [ ] A couple days before the class start, pre-create the demo room and have the 1510 HOL loaded.
-- [ ] Confirm Demo Center / DAP Take it for a spin room URL and per-student jumphost/login list.
+- [ ] Confirm Demo Center / DAP Take it for a spin room URL and per-student login list.
 - [ ] Verify sample inventory is online (Private Cloud, Edge, Storage, Free Pool nodes all "Online"/"Connected").
 - [ ] Verify at least one deployable Offer Blueprint per attendee/project namespace.
 - [ ] Pre-stage any required input files (e.g., service tags, IPs) attendees will need to paste into the Configuration step.
