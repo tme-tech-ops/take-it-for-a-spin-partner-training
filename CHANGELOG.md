@@ -8,6 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added (Unreleased)
 
+- Added instructor screen flow slides in `docs/Instructor_Screen_Flow/` as markdown files matching PPT slide content for each lab module.
+- Added "Display on screen" instructions in the Instructor Guide for each module, linking to the corresponding screen flow slide to keep students aligned and on track during labs.
+- Added facilitation note about using screen flow slides during labs.
 - Added instructor pre-session note to pre-create demo room with 1510 HOL a couple days before class.
 - Added facilitation note to minimize lab guide to right side of screen in Instructor Guide.
 - Added student prerequisite activities section in Student Lab Guide with link to Partner-Access-Demo-Center.pdf.
@@ -27,6 +30,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed (Unreleased)
 
+- Simplified instructor guide checklist wording (removed redundant jumphost reference).
 - Changed specific vCenter connection name to generic vSphere connection reference in External Connection walkthrough in both Instructor Guide and Student Lab Guide.
 - Renamed Module 3 in Instructor Guide from "Identity Management" to "Orchestrator Administrator" with expanded coverage of System Settings, Entitlement, Security, Plugins, and Support tabs.
 - Renamed Lab 2 in Student Lab Guide from "Reviewing Identity Management" to "Orchestrator Administrator" with expanded coverage of System Settings, Entitlement, Security, Plugins, and Support tabs.
