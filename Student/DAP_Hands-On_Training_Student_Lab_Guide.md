@@ -1,194 +1,244 @@
-# Dell Automation Platform (DAP) — "Take It For a Spin" Hands-On Training
+# Dell Automation Platform (DAP) "Take It For a Spin" Hands-On Training
 
 ## Student Lab Guide
 
-### Abstract
+### About This Guide
 
-This document is provided to assist Partners, ISVs (Independent Software Vendors), and GSIs (Global Systems Integrators) with completing the appropriate labs to apply the concepts and knowledge learnt throughout the Dell Automation Platform (DAP) hands-on training session. It is not intended to be used or distributed in isolation and may not contain all required information. While this is a simulator environment, it is built from a live functional environment to provide an authentic hands-on experience.
+This guide accompanies the instructor-led DAP hands-on session for Partners, ISVs (Independent Software Vendors), and GSIs (Global Systems Integrators). Each lab follows the same pattern: your instructor explains the topic, demonstrates it, and then you complete the steps yourself.
+
+Use this guide alongside the instructor's walkthrough. It does not cover everything discussed in class and is not intended for use on its own.
+
+The labs run in a simulator built from a live DAP environment, so the screens and workflows match the real product.
 
 ### Revisions
 
 | Version | Date | Description |
 | --- | --- | --- |
 | 0.1 | 04-Aug-2026 | Initial draft |
-| 0.2 | 04-Aug-2026 | Retargeted for Partners, ISVs, and GSIs — updated abstract and "What's next" section |
+| 0.2 | 04-Aug-2026 | Retargeted for Partners, ISVs, and GSIs; updated abstract and "What's next" section |
 | 0.3 | 11-Aug-2026 | Added PowerStore health check and OS update steps to Lab 2 |
 | 0.4 | 28-Aug-2026 | Swapped Lab 2 (Infrastructure Inventory) and Lab 3 (Identity Management) order |
-| 0.5 | 28-Aug-2026 | Renamed Lab 2 to "Orchestrator Administrator" with expanded tab coverage (System Settings, Entitlement, Security, Plugins, Support); added simulator note to abstract |
-| 0.6 | 28-Aug-2026 | Added student prerequisite activities section with link to Partner-Access-Demo-Center.pdf; added on-premises login option and lab guide minimization note |
-| 0.7 | 28-Aug-2026 | Added PowerStore onboarding certificate/user account, PowerEdge onboarding, and entitlement tokens/certificates (DDPC only) references to Lab 1 |
-| 0.8 | 28-Aug-2026 | Enhanced Lab 3 with External Connection vCenter/Import to NativeEdge, PowerStore Manager link, and Dell Private Cloud plugin demonstration note |
-| 0.9 | 28-Aug-2026 | Changed specific vCenter connection name to generic vSphere connection reference in External Connection walkthrough |
+| 0.5 | 28-Aug-2026 | Renamed Lab 2 to "Orchestrator Administrator" with expanded tab coverage; added simulator note to abstract |
+| 0.6 | 28-Aug-2026 | Added student prerequisites with link to Partner-Access-Demo-Center.pdf; added lab guide placement note |
+| 0.7 | 28-Aug-2026 | Added PowerStore and PowerEdge onboarding prerequisites to Lab 1 |
+| 0.8 | 28-Aug-2026 | Added External Connection, PowerStore Manager link, and Dell Private Cloud plugin demonstration to Lab 3 |
+| 0.9 | 28-Aug-2026 | Replaced specific vCenter connection name with a generic vSphere reference |
+| 1.0 | 08-Oct-2026 | Updated for accuracy against the latest releases |
+| 1.1 | 09-Oct-2026 | Restructured labs into parts; added lab overview, key terms, note-taking tables, and checkpoint questions; tightened wording |
 
 ### Disclaimer
 
 The information in this publication is provided "as is." Dell Inc. makes no representations or warranties of any kind with respect to the information in this publication, and specifically disclaims implied warranties of merchantability or fitness for a particular purpose.
 
-This is a simulated environment populated with placeholder data intended for demonstration purposes only. Data within this environment does not bear any accuracy to actual pricing or configurations and should not be used as such. Creating, deleting, or updating data in this environment will not have an effect on the initial items displayed before the change.
+This is a simulated environment populated with placeholder data for demonstration purposes only. The data does not reflect actual pricing or configurations and should not be used as such. Changes you make in the simulator (creating, updating, or deleting items) do not alter the baseline data.
 
 © 2026 Dell Inc. or its subsidiaries. All Rights Reserved. Dell, EMC, Dell Technologies and other trademarks are trademarks of Dell Inc. or its subsidiaries. Other trademarks may be trademarks of their respective owners.
 
 ---
 
-## Student Prerequisite Activities
+## Before the Session
 
-Before attending this hands-on training session, please complete the following prerequisite activities:
-
-- Review the [Partner-Access-Demo-Center.pdf](../docs/Partner-Access-Demo-Center.pdf) document for detailed instructions on accessing and navigating the Dell Demo Center environment.
-- Ensure you have a valid Dell Demo Center account. If you do not have one, create an account at `https://democenter.dell.com/` prior to the session.
-- Familiarize yourself with basic web browser navigation and virtual desktop concepts.
+- Read [Partner-Access-Demo-Center.pdf](../docs/Partner-Access-Demo-Center.pdf) for instructions on accessing and navigating Dell Demo Center.
+- Make sure you have a Dell Demo Center account. If not, create one at `https://democenter.dell.com/` before the session.
 
 ---
 
-## Dell Demo Center Access
+## Accessing the Lab
 
-1. Open a web browser and access the following URL: `https://democenter.dell.com/`
-2. Click the **Customer Sign In** link.
-3. Sign in with an existing account or create a new account.
-4. The URL to the Demo Center Take it for a spin room for **Dell Automation Platform** will be provided by your instructor.
-5. You will see a list of Jumphosts. Select and launch the Jumphost that corresponds to your assigned student number.
-6. Log in to the Windows virtual machine with the username and password provided prior to class. Expand the blue panel on the right of the jumphost window and use the **Paste Text** function to copy/paste your username and password.
-7. Launch Chrome. If prompted to configure a default search engine on first login, complete it (or skip if not prompted).
-8. At the initial login screen, choose the **on-premises** option.
-9. Enter the URL of the DAP Portal provided by your instructor into the browser address bar.
+1. Go to `https://democenter.dell.com/` and click **Customer Sign In**.
+2. Sign in with your Demo Center account.
+3. Open the DAP "Take It For a Spin" room using the URL your instructor provides.
+4. From the list of Hands-On Labs, launch the lab your instructor specifies.
 
-**Note:** Minimize this lab guide to the right side of your screen for easy reference while working in the DAP interface.
+Your instructor will orient you within the lab environment.
 
 ---
 
-## Lab 1: Exploring the DAP Portal and Orchestrator Dashboard
+## Lab Overview
 
-**Goal:** Get oriented in the DAP Portal, understand the three portal pillars, and learn to read the Orchestrator health dashboard.
+| Lab | Topic | Hands-on time |
+| --- | --- | --- |
+| 1 | DAP Portal and Orchestrator Dashboard | 
+| 2 | Orchestrator Administration |
+| 3 | Infrastructure Inventory | 
+| 4 | Blueprints Catalog | 
+| 5 | Deploying a Blueprint |
+| 6 | Monitoring Deployments |
 
-1. Open a browser and navigate to the DAP Portal URL provided by your instructor.
-2. Accept the self-signed certificate if prompted.
-3. Sign in with the credentials provided.
-4. On the **Home** tab, review the three cards under "Explore Dell Automation Platform":
-   - **Assets** — onboard and monitor Dell hardware from a centralized location.
-   - **Catalog** — access a curated library of validated blueprints and plugins.
-   - **Identity Management** — manage users and access for the portal and orchestrator.
-5. Note the following onboarding prerequisites for reference:
-   - **PowerStore onboarding:** Requires a dedicated local PowerStore account with the Storage Administrator role, and TLS trust with the PowerStore management certificate. The DAP OXY component must be able to reach the floating management IP and all cluster nodes.
-   - **PowerEdge onboarding:** PowerEdge servers can be onboarded as individual assets or as part of clusters (Private Cloud, Free Pool). Onboarding typically involves network connectivity, credentials, and discovery mechanisms.
-   - **Entitlement tokens and certificates:** These are DDPC (Dell Demo Center) only features used for validating access and licensing in the demo environment. These are not used in production DAP deployments.
-6. Under "Manage Your Infrastructure," click **Go to Orchestrator** (opens in a new tab).
-7. On the Orchestrator **Dashboard**, review:
-   - **Alerts (last 24 hours)** — Critical / Error / Warning / Information counters.
-   - **Events** — the running log of orchestrator activity.
-   - **Infrastructure and Deployments** rings — note the current counts (e.g., Online vs Disconnected assets; Completed vs Failed deployments).
-   - **Rules and Tags** — automation rules and resource tags (may be empty in this environment).
-8. Click **View All** next to Events to see the full event log, then navigate back to the Dashboard.
+### Key Terms
 
-*Checkpoint: You should be able to state how many assets are Online and how many deployments are Completed/Failed in the current environment.*
-
----
-
-## Lab 2: Orchestrator Administrator
-
-**Goal:** Understand the Orchestrator's administrative settings and configuration options.
-
-1. From the Orchestrator, click the gear icon (**Settings**) in the top-right.
-2. Review the **System Settings** tab:
-   - Review system information such as version, build number, and platform details
-   - Check notification settings and alert thresholds
-3. Review the **Entitlement** tab:
-   - Note the license management and subscription information
-   - Review feature entitlements and capabilities enabled for the tenant
-   - Check usage metrics and consumption tracking
-4. Review the **Security** tab:
-   - Note authentication and authorization settings
-   - Review SSL/TLS certificate management options
-   - Check password policies and security configurations
-5. Review the **Plugins** tab:
-   - Note available plugins for extending DAP functionality
-   - Review plugin installation, configuration, and management options
-6. Review the **Support** tab:
-   - Note platform health and diagnostic information
-   - Review support ticket creation and management options
-   - Check system logs and troubleshooting resources
-
-*Checkpoint: Identify which settings tab you would use for common administrative tasks (e.g., where to check license status, where to manage plugins, where to configure security settings).*
+| Term | Meaning |
+| --- | --- |
+| **Portal** | The DAP entry point for Assets, Catalog, and Identity Management |
+| **Orchestrator** | Where inventory, blueprints, and deployments are managed day to day |
+| **Blueprint** | A deployable automation package that defines infrastructure or software and how to install it |
+| **Offer Blueprint** | A blueprint for a specific product or configuration that you deploy directly |
+| **Utility Blueprint** | A blueprint that supports the infrastructure or services behind a deployment; not deployed directly |
+| **Deployment** | An instance of a blueprint, created when you deploy it |
+| **Free Pool** | Servers that are online and ready for provisioning but not yet assigned to a cluster |
+| **External Connection** | A connection to an existing external platform, such as Kubernetes or vCenter |
 
 ---
 
-## Lab 3: Browsing Infrastructure Inventory
+## Lab 1: DAP Portal and Orchestrator Dashboard
 
-**Goal:** Filter and inspect onboarded infrastructure across asset types, and drill into a physical node.
+**Goal:** Find your way around the DAP Portal and read platform health from the Orchestrator Dashboard.
+
+### Part A: The Portal
+
+1. Open the DAP Portal URL provided by your instructor.
+2. On the **Home** tab, locate the three cards under **Explore Dell Automation Platform**:
+
+   | Card | Purpose |
+   | --- | --- |
+   | **Assets** | Onboard and view Dell Storage, Network, and Compute devices from one asset register |
+   | **Catalog** | Browse a library of validated and non-validated blueprints and tools |
+   | **Identity Management** | Manage users and access for the Portal and Orchestrator |
+
+3. Follow along as your instructor walks through the Catalog, Identity Management, and Asset onboarding.
+
+**Onboarding prerequisites to note:**
+
+- **PowerStore:** A dedicated local PowerStore account with the Storage Administrator role, and TLS trust with the PowerStore management certificate.
+- **PowerEdge:** Servers are onboarded as individual assets. The Orchestrator or an Orchestrator Proxy needs network connectivity to each server's iDRAC. The exception is FIDO Device Onboarding (FDO), which your instructor will cover.
+
+### Part B: The Orchestrator Dashboard
+
+4. Under **Manage Your Infrastructure**, click **Orchestrator**.
+5. Review each area of the Dashboard:
+   - **Alerts (last 24 hours):** Counts by severity (Critical, Error, Warning, Information).
+   - **Events:** A running log of Orchestrator activity.
+   - **Infrastructure and Deployments:** Rings showing asset states (such as Online and Disconnected) and deployment states (such as Completed and Failed).
+   - **Rules and Tags:** Automation rules and resource tags. Rules may be empty in the lab environment.
+6. Click **View All** next to **Events** to open the full log, then return to the Dashboard.
+
+**Checkpoint**
+
+- How many assets are Online?
+- How many deployments are Completed?
+
+---
+
+## Lab 2: Orchestrator Administration
+
+**Goal:** Learn where the Orchestrator's key administrative settings live.
+
+1. In the Orchestrator, click the gear icon (**Settings**) at the top right.
+2. Your instructor will step through each menu. Use the table below to note what the key menus are for:
+
+   | Menu | What it is used for |
+   | --- | --- |
+   | **Entitlement** | |
+   | **Plugins** | |
+   | **Support** | |
+   | **Proxy Servers** | |
+
+3. Open the remaining menus and identify the purpose of each.
+
+**Checkpoint:** Which menu would you use to:
+
+- Check license status?
+- Install or update a plugin?
+- Configure security settings?
+- Gather information for a support case?
+
+---
+
+## Lab 3: Infrastructure Inventory
+
+**Goal:** Filter onboarded infrastructure by type, drill into a host, and review a PowerStore storage cluster.
+
+### Part A: Filter the Inventory
 
 1. In the left navigation, expand **Inventory** and select **Infrastructure**.
-2. Note the filter chips across the top: **All**, **Private Cloud**, **Edge**, **Storage**, **AI**, **External Connection**, **Free Pool**. Click through each to see how the grid filters.
-3. Select the **External Connection** chip to see Kubernetes and vCenter connections. Note that External Connections currently support Kubernetes and vCenter.
-4. Navigate to **Virtual Machines** and locate a vSphere connection. Note that stopped VMs have an **Import to NativeEdge** option in the **More** dropdown for edge computing scenarios.
-5. Select the **Private Cloud** chip. You should see clusters such as a VMware, Red Hat OpenShift, and/or Nutanix private cloud.
-6. Click the expand arrow (`>`) next to a cluster row (e.g., `ntnx-dpcvm...`) to reveal its member hosts (service tags, device models).
-7. Click on one member host's service tag link (e.g., an `8SP5L84`-style link) to open its native management console view.
-8. Close the node console and return to the Infrastructure grid. Select the **Free Pool** chip to see servers that are online and ready for provisioning but not yet assigned to a cluster.
-9. Select the **Storage** chip and locate an onboarded **PowerStore** cluster in the grid.
-10. Click the PowerStore cluster name to open its summary. Note the **PowerStore Manager** link that launches the native PowerStore management interface.
-11. Review the cluster status, and current PowerStoreOS version.
-12. Open the **Health** (or **Run Health Check**) section and note the available checks: **System Check**, **Pre-Upgrade Health Check (PUHC)**, and any installed **Health Check thin packages**.
-13. Open the **Updates** tab and note the currently installed PowerStoreOS version and whether an upgrade package is available.
+2. Click each filter chip and watch how the grid changes: **All**, **Private Cloud**, **Edge**, **Storage**, **AI**, **External Connection**, **Free Pool**.
+3. Select **External Connection** and note the Kubernetes and vCenter connections.
+4. Select **Free Pool**. These servers are online and ready for provisioning but not yet assigned to a cluster.
 
-*Note: Your instructor will demonstrate the Dell Private Cloud plugin via vSphere, showcasing the System, Physical View, Settings, Updates (zero day patching), Security, and Support tabs. All Dell Private Cloud outcomes have the same set of tabs for administrative consistency.*
+### Part B: Drill Into a Host
 
-*Checkpoint: You should be able to name at least 3 of the 6 infrastructure categories, describe what a Free Pool asset is, identify External Connection options, locate the PowerStore Manager link, and identify where to find PowerStore health status and OS update information.*
+5. Select **Private Cloud**. Clusters may include VMware vSphere, Red Hat OpenShift, and Nutanix.
+6. Click the expand arrow (`>`) next to a cluster (for example, `demo-ntx01`) to show its member hosts, including service tags and device models.
+7. Click a host's hostname link to open its native management console view.
+8. Close the console and return to the **Infrastructure** grid.
+
+### Part C: Review PowerStore Storage
+
+9. Select **Storage** and click the PowerStore cluster name (for example, `demo-powerstore01`) to open its summary.
+10. Note the cluster status and the installed PowerStoreOS version.
+11. Click **Run Health Check** and note the available checks: **Pre-Upgrade Health Check (PUHC)** and any installed **Health Check packages**.
+12. Click **Update** and note the installed PowerStoreOS version and whether an upgrade package is available.
+13. Locate the **PowerStore Manager** link. It opens the native PowerStore management interface.
+
+**Instructor demonstration:** Your instructor will show the Dell Private Cloud plugin in vSphere, covering the **System**, **Physical View**, **Settings**, **Updates** (including zero-day patching), **Security**, and **Support** tabs. Dell Private Cloud outcomes provide the same value propositions, so the outcome is consistent across platforms.
+
+**Checkpoint**
+
+- Name at least three of the six infrastructure categories.
+- What is a Free Pool asset?
+- What types of External Connection are listed?
+- Where is the PowerStore Manager link?
+- Where do you find PowerStore health status and OS update information?
 
 ---
 
-## Lab 4: Browsing the Blueprints Catalog
+## Lab 4: Blueprints Catalog
 
-**Goal:** Understand the difference between Offer Blueprints and Utility Blueprints before deploying one.
+**Goal:** Tell Offer Blueprints and Utility Blueprints apart before deploying one.
 
 1. In the left navigation under **Inventory**, select **Blueprints**.
-2. On the **Offer Blueprints** tab, review the grid: Name, Status, Revision, Type, Revision Date, Deployments, Created By, Tags.
-3. Sort by the **Deployments** column (click the column header) to see which blueprints have been used most often.
-4. Click the **Utility Blueprints** tab and note that these support infrastructure/services behind a deployment rather than being deployed directly.
-5. Return to the **Offer Blueprints** tab — you will deploy one of these in Lab 5.
+2. On the **Offer Blueprints** tab, review the grid columns: Name, Status, Revision, Type, Revision Date, Deployments, Created By, Tags.
+3. Click the **Deployments** column header to sort by usage.
+4. Open the **Utility Blueprints** tab. These support the infrastructure and services behind a deployment and are not deployed directly.
+5. Return to the **Offer Blueprints** tab. You will deploy one of these in Lab 5.
+
+**Checkpoint**
+
+- What is the difference between an Offer Blueprint and a Utility Blueprint?
+- Which Offer Blueprint has the most deployments?
 
 ---
 
 ## Lab 5: Deploying a Blueprint
 
-**Goal:** Deploy a sample blueprint end-to-end using the Deploy wizard.
+**Goal:** Deploy a blueprint end to end using the Deploy wizard, and watch it run.
 
-1. On the **Offer Blueprints** tab, select the blueprint assigned by your instructor (e.g., `DPC_Nutanix_Cluster_Deployment`).
-2. Click **Deploy**.
-3. **Step 1 — Deployment Name:** Enter a unique deployment name (e.g., `<your-student-number>-cluster-deploy`) and click **Next**.
-4. **Step 2 — Configuration:**
-   - Optionally click **Browse** to load Deployment Inputs from a file.
-   - Fill in the required fields marked with `*` (hover the `ⓘ` icon next to any field for a description). For a Nutanix cluster deployment example, this includes:
-     - **File Server Root Path**
-     - Whether to use the Dell Automation Platform file server for AHV/AOS images
-     - **Cluster Hosts** table entries: `service_tag`, `hypervisor_ip`, `controller_vm_ip` (click **Add** after entering each row)
-   - If your blueprint links to a simulated walkthrough video (e.g., "Nutanix Cluster Deployment walkthrough"), watch it to see what the real target-side configuration (network interfaces, cluster settings) would look like.
-   - Click **Next**.
-5. **Step 3 — Summary:** Review all entered values. If everything looks correct, click **Deploy** (or **Finish**, depending on the wizard's final label).
-6. Wait for the deployment to be created, then navigate to **Inventory → Deployments** to confirm your deployment appears in the list with the name you chose.
+1. On the **Offer Blueprints** tab, select the blueprint your instructor assigns (for example, `DPC_VSphere_Cluster_Deployment`) and click **Deploy**.
+2. **Deployment Name:** A name is filled in automatically. Change it if you like, and make a note of it for Lab 6. Click **Next**.
+3. **Configuration:** Deployment inputs are pre-loaded from a file. Required fields are marked with `*`. Hover over the `ⓘ` icon next to a field for its description. Leave the pre-loaded values unless your instructor tells you otherwise, then click **Next**.
+4. Review the summary and click **Deploy**.
+5. Open the new deployment and select **Logs**. Follow the execution graph and log output until the deployment finishes.
 
-*Checkpoint: Your deployment should be visible in the Deployments list. Status may show as "Deployed," or "In Progress" depending on the target and simulation.*
+**Checkpoint:** Your deployment appears in the Deployments list. Its status shows **Deployed** or **In Progress**, depending on the target and the simulation.
 
 ---
 
 ## Lab 6: Monitoring Deployments
 
-**Goal:** Track and interpret the status of your deployment.
+**Goal:** Read deployment status and trace a failed deployment to the step that caused it.
 
-1. Go to **Inventory → Deployments**.
-2. Locate your deployment by the name you assigned in the previous lab.
-3. Review the columns: Target, Created, **Status** (Deployed / Uninstalled / Failed Install), Blueprint Name, **Revision**, Type, Deployments (sub-deployment count), Last Updated, Tags.
-4. Click on your deployment's name to open its detail view and review its execution history.
-5. If your deployment shows **Failed Install**, click into it to review the execution log and identify which step failed (this is for observation only — do not attempt to fix production issues during class; ask your instructor).
+1. Go to **Inventory > Deployments**.
+2. Find your deployment by name.
+3. Review the columns: Target, Created, Status, Blueprint Name, Revision, Type, Deployments (number of sub-deployments), Last Updated, Tags.
+   - **Status** shows Deployed, Uninstalled, or Failed Install.
+   - **Revision** shows which blueprint version the deployment used.
+4. Click your deployment's name to open its Logs and review its execution graph.
 
-*Checkpoint: You can describe your deployment's current status and which blueprint/revision it was deployed from.*
+**Checkpoint**
+
+- What is your deployment's current status?
+- Which blueprint and revision was it deployed from?
 
 ---
 
 ## Summary
 
-Congratulations — you have completed the Dell Automation Platform (DAP) hands-on training session. You have practiced the full end-to-end workflow: **Portal → Orchestrator Dashboard → Orchestrator Administrator → Infrastructure Inventory → Blueprints Catalog → Deploy → Monitor Deployments**
+You have completed the DAP hands-on session and worked through the core workflow:
 
-### What's next?
+**Portal > Orchestrator Dashboard > Orchestrator Administration > Infrastructure Inventory > Blueprints Catalog > Deploy > Monitor Deployments**
 
-- **If you're a Partner:** deeper, product-specific deployment scenarios and customer demo/positioning guidance.
-- **If you're an ISV:** authoring and publishing your own blueprints (Blueprint Assist), and versioning your Catalog listing.
-- **If you're a GSI:** Day-2 operations (updates, drift detection, reinstall workflows), RBAC/multi-tenant standardization, and automation via Rules and Tags.
+### What's Next?
+
+- **Partners:** Product-specific deployment scenarios, plus customer demo and positioning guidance.
+- **ISVs:** Authoring and publishing your own blueprints with Blueprint Assist, and versioning your Catalog listing.
+- **GSIs:** Day-2 operations (updates, drift detection, reinstall), RBAC and multi-tenant standardization, and automation with Rules and Tags.

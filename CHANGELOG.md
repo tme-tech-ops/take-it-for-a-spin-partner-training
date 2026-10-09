@@ -30,6 +30,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed (Unreleased)
 
+- Rewrote the Student Lab Guide (v1.1): added lab overview with timings, key terms, note-taking table for Lab 2, and checkpoint questions for every lab; split Labs 1 and 3 into parts; fixed duplicate filter chip, broken formatting, and Lab 5/6 step inconsistencies; removed em-dashes.
+
 - Simplified instructor guide checklist wording (removed redundant jumphost reference).
 - Changed specific vCenter connection name to generic vSphere connection reference in External Connection walkthrough in both Instructor Guide and Student Lab Guide.
 - Renamed Module 3 in Instructor Guide from "Identity Management" to "Orchestrator Administrator" with expanded coverage of System Settings, Entitlement, Security, Plugins, and Support tabs.
