@@ -4,11 +4,11 @@
 
 ### About This Guide
 
-This guide accompanies the instructor-led DAP hands-on session for Partners, ISVs (Independent Software Vendors), and GSIs (Global Systems Integrators). Each lab follows the same pattern: your instructor explains the topic, demonstrates it, and then you complete the steps yourself.
+This guide accompanies the instructor-led DAP hands-on session for Partners, ISVs (Independent Software Vendors), and GSIs (Global Systems Integrators). Each module follows the same pattern: your instructor explains the topic, demonstrates it, and then you complete the steps yourself.
 
 Use this guide alongside the instructor's walkthrough. It does not cover everything discussed in class and is not intended for use on its own.
 
-The labs run in a simulator built from a live DAP environment, so the screens and workflows match the real product.
+The modules run in a simulator built from a live DAP environment, so the screens and workflows match the real product.
 
 The training covers the DAP Portal (Home, Assets, Catalog, Identity Management), the Orchestrator Dashboard, Orchestrator Administrator settings (System Settings, Entitlement, Security, Plugins, Support), multi-asset Inventory & Infrastructure (Private Cloud, Edge, Storage, AI, External Connection, Free Pool), the Blueprints Catalog, end-to-end blueprint deployment, and deployment monitoring. Special emphasis is placed on PowerStore storage onboarding and lifecycle management, PowerEdge onboarding, External Connection options (vCenter/Import to NativeEdge), and the Dell Private Cloud plugin showcase via vSphere.
 
@@ -18,15 +18,16 @@ The training covers the DAP Portal (Home, Assets, Catalog, Identity Management),
 | --- | --- | --- |
 | 0.1 | 04-Aug-2026 | Initial draft |
 | 0.2 | 04-Aug-2026 | Retargeted for Partners, ISVs, and GSIs; updated abstract and "What's next" section |
-| 0.3 | 11-Aug-2026 | Added PowerStore health check and OS update steps to Module 2 |
+| 0.3 | 11-Aug-2026 | Added PowerStore health check and OS update steps to Module 4 (now Infrastructure Inventory) |
 | 0.4 | 28-Aug-2026 | Swapped Module 2 (Infrastructure Inventory) and Module 3 (Identity Management) order |
 | 0.5 | 28-Aug-2026 | Renamed Module 2 to "Orchestrator Administrator" with expanded tab coverage; added simulator note to abstract |
 | 0.6 | 28-Aug-2026 | Added student prerequisites with link to Partner-Access-Demo-Center.pdf; added module guide placement note |
-| 0.7 | 28-Aug-2026 | Added PowerStore and PowerEdge onboarding prerequisites to Module 1 |
-| 0.8 | 28-Aug-2026 | Added External Connection, PowerStore Manager link, and Dell Private Cloud plugin demonstration to Module 3 |
+| 0.7 | 28-Aug-2026 | Added PowerStore and PowerEdge onboarding prerequisites to Module 1 (now Platform Overview) |
+| 0.8 | 28-Aug-2026 | Added External Connection, PowerStore Manager link, and Dell Private Cloud plugin demonstration to Module 4 (now Inventory & Infrastructure) |
 | 0.9 | 28-Aug-2026 | Replaced specific vCenter connection name with a generic vSphere reference |
 | 1.0 | 08-Oct-2026 | Updated for accuracy against the latest releases |
 | 1.1 | 09-Oct-2026 | Restructured modules into parts; added module overview, key terms, note-taking tables, and checkpoint questions; tightened wording |
+| 1.2 | 15-Oct-2026 | Reconciled module structure with Instructor guide: split Module 1 into separate Platform Overview and Orchestrator Dashboard modules; renumbered to 7 modules to align with Instructor agenda |
 
 ### Disclaimer
 
@@ -60,12 +61,13 @@ Your instructor will orient you within the lab environment.
 
 | Module | Topic | Hands-on time |
 | --- | --- | --- |
-| 1 | DAP Portal and Orchestrator Dashboard | 
-| 2 | Orchestrator Administration |
-| 3 | Infrastructure Inventory | 
-| 4 | Blueprints Catalog | 
-| 5 | Deploying a Blueprint |
-| 6 | Monitoring Deployments |
+| 1 | Platform Overview (Home, Assets, Catalog, Identity Management cards) |
+| 2 | Orchestrator Dashboard |
+| 3 | Orchestrator Administrator (System Settings, Entitlement, Security, Plugins, Support) |
+| 4 | Inventory & Infrastructure deep dive |
+| 5 | Blueprints Catalog |
+| 6 | Deploy a Blueprint (guided lab) |
+| 7 | Monitor & Manage Deployments |
 
 ### Key Terms
 
@@ -82,11 +84,9 @@ Your instructor will orient you within the lab environment.
 
 ---
 
-## Module 1: DAP Portal and Orchestrator Dashboard
+## Module 1: Platform Overview (Home, Assets, Catalog, Identity Management cards)
 
-**Goal:** Find your way around the DAP Portal and read platform health from the Orchestrator Dashboard.
-
-### Part A: The Portal
+**Goal:** Orient yourself to the DAP Portal landing page and its three pillars.
 
 1. Open the DAP Portal URL provided by your instructor.
 2. On the **Home** tab, locate the three cards under **Explore Dell Automation Platform**:
@@ -104,15 +104,24 @@ Your instructor will orient you within the lab environment.
 - **PowerStore:** A dedicated local PowerStore account with the Storage Administrator role, and TLS trust with the PowerStore management certificate.
 - **PowerEdge:** Servers are onboarded as individual assets. The Orchestrator or an Orchestrator Proxy needs network connectivity to each server's iDRAC. The exception is FIDO Device Onboarding (FDO), which your instructor will cover.
 
-### Part B: The Orchestrator Dashboard
+**Checkpoint**
 
-4. Under **Manage Your Infrastructure**, click **Orchestrator**.
-5. Review each area of the Dashboard:
+- Locate all three pillar cards (Assets, Catalog, Identity Management).
+- Find the link to go to the Orchestrator.
+
+---
+
+## Module 2: Orchestrator Dashboard
+
+**Goal:** Read platform health at a glance from the Orchestrator Dashboard.
+
+1. Under **Manage Your Infrastructure**, click **Orchestrator**.
+2. Review each area of the Dashboard:
    - **Alerts (last 24 hours):** Counts by severity (Critical, Error, Warning, Information).
    - **Events:** A running log of Orchestrator activity.
    - **Infrastructure and Deployments:** Rings showing asset states (such as Online and Disconnected) and deployment states (such as Completed and Failed).
    - **Rules and Tags:** Automation rules and resource tags. Rules may be empty in the lab environment.
-6. Click **View All** next to **Events** to open the full log, then return to the Dashboard.
+3. Click **View All** next to **Events** to open the full log, then return to the Dashboard.
 
 **Checkpoint**
 
@@ -121,7 +130,7 @@ Your instructor will orient you within the lab environment.
 
 ---
 
-## Module 2: Orchestrator Administration
+## Module 3: Orchestrator Administrator (System Settings, Entitlement, Security, Plugins, Support)
 
 **Goal:** Learn where the Orchestrator's key administrative settings live.
 
@@ -146,7 +155,7 @@ Your instructor will orient you within the lab environment.
 
 ---
 
-## Module 3: Infrastructure Inventory
+## Module 4: Inventory & Infrastructure Deep Dive
 
 **Goal:** Filter onboarded infrastructure by type, drill into a host, and review a PowerStore storage cluster.
 
@@ -184,7 +193,7 @@ Your instructor will orient you within the lab environment.
 
 ---
 
-## Module 4: Blueprints Catalog
+## Module 5: Blueprints Catalog
 
 **Goal:** Tell Offer Blueprints and Utility Blueprints apart before deploying one.
 
@@ -192,7 +201,7 @@ Your instructor will orient you within the lab environment.
 2. On the **Offer Blueprints** tab, review the grid columns: Name, Status, Revision, Type, Revision Date, Deployments, Created By, Tags.
 3. Click the **Deployments** column header to sort by usage.
 4. Open the **Utility Blueprints** tab. These support the infrastructure and services behind a deployment and are not deployed directly.
-5. Return to the **Offer Blueprints** tab. You will deploy one of these in Module 5.
+5. Return to the **Offer Blueprints** tab. You will deploy one of these in Module 6.
 
 **Checkpoint**
 
@@ -201,12 +210,12 @@ Your instructor will orient you within the lab environment.
 
 ---
 
-## Module 5: Deploying a Blueprint
+## Module 6: Deploy a Blueprint (guided lab)
 
 **Goal:** Deploy a blueprint end to end using the Deploy wizard, and watch it run.
 
 1. On the **Offer Blueprints** tab, select the blueprint your instructor assigns (for example, `DPC_VSphere_Cluster_Deployment`) and click **Deploy**.
-2. **Deployment Name:** A name is filled in automatically. Change it if you like, and make a note of it for Module 6. Click **Next**.
+2. **Deployment Name:** A name is filled in automatically. Change it if you like, and make a note of it for Module 7. Click **Next**.
 3. **Configuration:** Deployment inputs are pre-loaded from a file. Required fields are marked with `*`. Hover over the `ⓘ` icon next to a field for its description. Leave the pre-loaded values unless your instructor tells you otherwise, then click **Next**.
 4. Review the summary and click **Deploy**.
 5. Open the new deployment and select **Logs**. Follow the execution graph and log output until the deployment finishes.
@@ -215,7 +224,7 @@ Your instructor will orient you within the lab environment.
 
 ---
 
-## Module 6: Monitoring Deployments
+## Module 7: Monitor & Manage Deployments
 
 **Goal:** Read deployment status and trace a failed deployment to the step that caused it.
 
@@ -237,7 +246,7 @@ Your instructor will orient you within the lab environment.
 
 You have completed the DAP hands-on session and worked through the core workflow:
 
-**Portal > Orchestrator Dashboard > Orchestrator Administration > Infrastructure Inventory > Blueprints Catalog > Deploy > Monitor Deployments**
+**Platform Overview > Orchestrator Dashboard > Orchestrator Administrator > Inventory & Infrastructure > Blueprints Catalog > Deploy > Monitor & Manage Deployments**
 
 ### What's Next?
 
