@@ -4,7 +4,9 @@
 
 ### Abstract
 
-This document is provided to assist Partners, ISVs (Independent Software Vendors), and GSIs (Global Systems Integrators) with completing the appropriate labs to apply the concepts and knowledge learnt throughout the Dell Automation Platform (DAP) hands-on training session. It is not intended to be used or distributed in isolation and may not contain all required information. While this is a simulator environment, it is built from a live functional environment to provide an authentic hands-on experience.
+This document is provided to assist Partners, ISVs (Independent Software Vendors), and GSIs (Global Systems Integrators) with completing the appropriate labs to apply the concepts and knowledge learnt throughout the Dell Automation Platform (DAP) hands-on training session. It is a companion to the *DAP Hands-On Training — Instructor Guide*. While this is a simulator environment, it is built from a live functional environment to provide an authentic hands-on experience.
+
+The training covers the DAP Portal (Home, Assets, Catalog, Identity Management), the Orchestrator Dashboard, Orchestrator Administrator settings (System Settings, Entitlement, Security, Plugins, Support), multi-asset Inventory & Infrastructure (Private Cloud, Edge, Storage, AI, External Connection, Free Pool), the Blueprints Catalog, end-to-end blueprint deployment, and deployment monitoring. Special emphasis is placed on PowerStore storage onboarding and lifecycle management, PowerEdge onboarding, External Connection options (vCenter/Import to NativeEdge), and the Dell Private Cloud plugin showcase via vSphere.
 
 ### Revisions
 

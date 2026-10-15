@@ -6,6 +6,8 @@
 
 This document is provided to assist instructors in delivering the "Dell Automation Platform (DAP) — Take It For a Spin" hands-on training session to **Partners, ISVs (Independent Software Vendors), and GSIs (Global Systems Integrators)**. It contains the session agenda, timing, learning objectives, facilitation notes/talking points, and environment setup checklist. It is a companion to the *DAP Hands-On Training — Student Lab Guide*. While this is a simulator environment, it is built from a live functional environment to provide an authentic hands-on experience.
 
+The training covers the DAP Portal (Home, Assets, Catalog, Identity Management), the Orchestrator Dashboard, Orchestrator Administrator settings (System Settings, Entitlement, Security, Plugins, Support), multi-asset Inventory & Infrastructure (Private Cloud, Edge, Storage, AI, External Connection, Free Pool), the Blueprints Catalog, end-to-end blueprint deployment, and deployment monitoring. Special emphasis is placed on PowerStore storage onboarding and lifecycle management, PowerEdge onboarding, External Connection options (vCenter/Import to NativeEdge), and the Dell Private Cloud plugin showcase via vSphere. The content includes audience-specific relevance notes for Partners, ISVs, and GSIs throughout each module.
+
 ### Revisions
 
 | Version | Date | Description |
