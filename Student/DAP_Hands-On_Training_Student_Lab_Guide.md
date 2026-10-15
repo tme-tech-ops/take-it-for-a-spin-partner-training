@@ -1,6 +1,6 @@
 # Dell Automation Platform (DAP) "Take It For a Spin" Hands-On Training
 
-## Student Lab Guide
+## Student Module Guide
 
 ### About This Guide
 
@@ -18,15 +18,15 @@ The training covers the DAP Portal (Home, Assets, Catalog, Identity Management),
 | --- | --- | --- |
 | 0.1 | 04-Aug-2026 | Initial draft |
 | 0.2 | 04-Aug-2026 | Retargeted for Partners, ISVs, and GSIs; updated abstract and "What's next" section |
-| 0.3 | 11-Aug-2026 | Added PowerStore health check and OS update steps to Lab 2 |
-| 0.4 | 28-Aug-2026 | Swapped Lab 2 (Infrastructure Inventory) and Lab 3 (Identity Management) order |
-| 0.5 | 28-Aug-2026 | Renamed Lab 2 to "Orchestrator Administrator" with expanded tab coverage; added simulator note to abstract |
-| 0.6 | 28-Aug-2026 | Added student prerequisites with link to Partner-Access-Demo-Center.pdf; added lab guide placement note |
-| 0.7 | 28-Aug-2026 | Added PowerStore and PowerEdge onboarding prerequisites to Lab 1 |
-| 0.8 | 28-Aug-2026 | Added External Connection, PowerStore Manager link, and Dell Private Cloud plugin demonstration to Lab 3 |
+| 0.3 | 11-Aug-2026 | Added PowerStore health check and OS update steps to Module 2 |
+| 0.4 | 28-Aug-2026 | Swapped Module 2 (Infrastructure Inventory) and Module 3 (Identity Management) order |
+| 0.5 | 28-Aug-2026 | Renamed Module 2 to "Orchestrator Administrator" with expanded tab coverage; added simulator note to abstract |
+| 0.6 | 28-Aug-2026 | Added student prerequisites with link to Partner-Access-Demo-Center.pdf; added module guide placement note |
+| 0.7 | 28-Aug-2026 | Added PowerStore and PowerEdge onboarding prerequisites to Module 1 |
+| 0.8 | 28-Aug-2026 | Added External Connection, PowerStore Manager link, and Dell Private Cloud plugin demonstration to Module 3 |
 | 0.9 | 28-Aug-2026 | Replaced specific vCenter connection name with a generic vSphere reference |
 | 1.0 | 08-Oct-2026 | Updated for accuracy against the latest releases |
-| 1.1 | 09-Oct-2026 | Restructured labs into parts; added lab overview, key terms, note-taking tables, and checkpoint questions; tightened wording |
+| 1.1 | 09-Oct-2026 | Restructured modules into parts; added module overview, key terms, note-taking tables, and checkpoint questions; tightened wording |
 
 ### Disclaimer
 
@@ -45,7 +45,7 @@ This is a simulated environment populated with placeholder data for demonstratio
 
 ---
 
-## Accessing the Lab
+## Accessing the Module
 
 1. Go to `https://democenter.dell.com/` and click **Customer Sign In**.
 2. Sign in with your Demo Center account.
@@ -56,9 +56,9 @@ Your instructor will orient you within the lab environment.
 
 ---
 
-## Lab Overview
+## Module Overview
 
-| Lab | Topic | Hands-on time |
+| Module | Topic | Hands-on time |
 | --- | --- | --- |
 | 1 | DAP Portal and Orchestrator Dashboard | 
 | 2 | Orchestrator Administration |
@@ -82,7 +82,7 @@ Your instructor will orient you within the lab environment.
 
 ---
 
-## Lab 1: DAP Portal and Orchestrator Dashboard
+## Module 1: DAP Portal and Orchestrator Dashboard
 
 **Goal:** Find your way around the DAP Portal and read platform health from the Orchestrator Dashboard.
 
@@ -121,7 +121,7 @@ Your instructor will orient you within the lab environment.
 
 ---
 
-## Lab 2: Orchestrator Administration
+## Module 2: Orchestrator Administration
 
 **Goal:** Learn where the Orchestrator's key administrative settings live.
 
@@ -146,7 +146,7 @@ Your instructor will orient you within the lab environment.
 
 ---
 
-## Lab 3: Infrastructure Inventory
+## Module 3: Infrastructure Inventory
 
 **Goal:** Filter onboarded infrastructure by type, drill into a host, and review a PowerStore storage cluster.
 
@@ -184,7 +184,7 @@ Your instructor will orient you within the lab environment.
 
 ---
 
-## Lab 4: Blueprints Catalog
+## Module 4: Blueprints Catalog
 
 **Goal:** Tell Offer Blueprints and Utility Blueprints apart before deploying one.
 
@@ -192,7 +192,7 @@ Your instructor will orient you within the lab environment.
 2. On the **Offer Blueprints** tab, review the grid columns: Name, Status, Revision, Type, Revision Date, Deployments, Created By, Tags.
 3. Click the **Deployments** column header to sort by usage.
 4. Open the **Utility Blueprints** tab. These support the infrastructure and services behind a deployment and are not deployed directly.
-5. Return to the **Offer Blueprints** tab. You will deploy one of these in Lab 5.
+5. Return to the **Offer Blueprints** tab. You will deploy one of these in Module 5.
 
 **Checkpoint**
 
@@ -201,12 +201,12 @@ Your instructor will orient you within the lab environment.
 
 ---
 
-## Lab 5: Deploying a Blueprint
+## Module 5: Deploying a Blueprint
 
 **Goal:** Deploy a blueprint end to end using the Deploy wizard, and watch it run.
 
 1. On the **Offer Blueprints** tab, select the blueprint your instructor assigns (for example, `DPC_VSphere_Cluster_Deployment`) and click **Deploy**.
-2. **Deployment Name:** A name is filled in automatically. Change it if you like, and make a note of it for Lab 6. Click **Next**.
+2. **Deployment Name:** A name is filled in automatically. Change it if you like, and make a note of it for Module 6. Click **Next**.
 3. **Configuration:** Deployment inputs are pre-loaded from a file. Required fields are marked with `*`. Hover over the `ⓘ` icon next to a field for its description. Leave the pre-loaded values unless your instructor tells you otherwise, then click **Next**.
 4. Review the summary and click **Deploy**.
 5. Open the new deployment and select **Logs**. Follow the execution graph and log output until the deployment finishes.
@@ -215,7 +215,7 @@ Your instructor will orient you within the lab environment.
 
 ---
 
-## Lab 6: Monitoring Deployments
+## Module 6: Monitoring Deployments
 
 **Goal:** Read deployment status and trace a failed deployment to the step that caused it.
 
